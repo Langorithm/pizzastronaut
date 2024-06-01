@@ -26,15 +26,21 @@ driver/output_latency.web=100
 SM="*res://Sound/SoundManager.gd"
 Quitautoload="*res://¡placeholders/quitautoload.gd"
 SC="*res://Globals/SceneChanger/SceneChanger.gd"
-InputManager="*res://GodotTouchInputManager/InputManager.gd"
-MobileInputHandler="*res://GodotTouchInputManager/MobileInputHandler.gd"
+InputManager="*res://addons/GodotTouchInputManager/InputManager.gd"
+MobileInputHandler="*res://addons/GodotTouchInputManager/MobileInputHandler.gd"
+__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
 
 [file_customization]
 
@@ -44,6 +50,10 @@ folder_colors={
 "res://UI/": "purple",
 "res://¡placeholders/": "gray"
 }
+
+[inkgd]
+
+register_templates=true
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wwmxgctqq853"]
+[gd_scene load_steps=13 format=3 uid="uid://wwmxgctqq853"]
 
 [ext_resource type="PackedScene" uid="uid://68ydftc85v40" path="res://World/Houses/npc_house.tscn" id="1_yv12u"]
 [ext_resource type="Texture2D" uid="uid://dfbn1lc2cbddj" path="res://¡placeholders/Guy-PNG-File.png" id="2_hvfqp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://chvy1tmlnqbwk" path="res://¡placeholders/Screenshot 2024-05-16 at 1.57.25 AM.png" id="4_w6x5e"]
 [ext_resource type="Texture2D" uid="uid://6mvu0dj36r2n" path="res://¡placeholders/df5f34f14ddc1560e6d75157191d8e8a.png" id="5_qhteh"]
 [ext_resource type="Texture2D" uid="uid://j35vhhtx7s7k" path="res://¡placeholders/Screenshot 2024-05-16 at 1.58.57 AM.png" id="6_vnoqh"]
+[ext_resource type="Texture2D" uid="uid://dxxkqd7vk10p5" path="res://¡placeholders/prueba.png" id="7_g3rnf"]
 [ext_resource type="PackedScene" uid="uid://bexopky0lurg0" path="res://Player/player.tscn" id="7_veswy"]
 [ext_resource type="Texture2D" uid="uid://cbwe6xt2gwtjw" path="res://¡placeholders/spacebg/stars.png" id="8_xk447"]
 [ext_resource type="Texture2D" uid="uid://3qdcmp4v8cie" path="res://¡placeholders/spacebg/nebulae.png" id="9_b7yys"]
@@ -34,6 +35,10 @@ npc_texture = ExtResource("5_qhteh")
 [node name="NPCHouse5" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(-146, 125)
 npc_texture = ExtResource("6_vnoqh")
+
+[node name="NPCHouse6" parent="." instance=ExtResource("1_yv12u")]
+position = Vector2(475, 196)
+npc_texture = ExtResource("7_g3rnf")
 
 [node name="Player" parent="." instance=ExtResource("7_veswy")]
 position = Vector2(479, 281)

@@ -74,17 +74,20 @@ text = " start game"
 
 [node name="OptionsButton" type="Button" parent="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "     options"
 alignment = 0
 icon_alignment = 1
 
 [node name="CreditsButton" type="Button" parent="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "    credits"
 
 [node name="CloseButton" type="Button" parent="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
+disabled = true
 text = "󰩈      close"
 
 [node name="CreditsContainer" type="TabContainer" parent="StartMenu/UI_Layer/Control/StartMenuUI"]
@@ -237,7 +240,4 @@ texture_filter = 1
 
 [connection signal="visibility_changed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons" to="StartMenu" method="_on_start_buttons_visibility_changed"]
 [connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer/StartButton" to="StartMenu" method="_on_start_button_pressed"]
-[connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer/OptionsButton" to="StartMenu" method="_on_options_button_pressed"]
-[connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer/CreditsButton" to="StartMenu" method="_on_credits_button_pressed"]
-[connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer/CloseButton" to="StartMenu" method="_on_close_button_pressed"]
 [connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/CreditsContainer/MarginContainer/CreditsBackButton" to="StartMenu" method="_on_credits_back_button_pressed"]
