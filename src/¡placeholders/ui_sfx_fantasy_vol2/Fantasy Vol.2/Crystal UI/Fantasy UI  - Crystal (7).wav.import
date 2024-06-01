@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n71vpg8tr106"
+path="res://.godot/imported/Fantasy UI  - Crystal (7).wav-8af38ea674b26376e818fda099bfbeda.sample"
+
+[deps]
+
+source_file="res://¡placeholders/ui_sfx_fantasy_vol2/Fantasy Vol.2/Crystal UI/Fantasy UI  - Crystal (7).wav"
+dest_files=["res://.godot/imported/Fantasy UI  - Crystal (7).wav-8af38ea674b26376e818fda099bfbeda.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

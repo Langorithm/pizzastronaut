@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://elciyapm51t6"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rf1m4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Torso" type="Sprite2D" parent="."]
+scale = Vector2(0.560547, 0.630859)
+texture = SubResource("NoiseTexture2D_rf1m4")
+
+[node name="Head" type="Sprite2D" parent="Torso"]
+modulate = Color(0.152941, 0.152941, 0.152941, 1)
+position = Vector2(-693.965, 240.941)
+scale = Vector2(0.51568, 0.458204)
+texture = SubResource("NoiseTexture2D_rf1m4")
+
+[node name="Leg R" type="Sprite2D" parent="Torso"]
+position = Vector2(-132.906, 431.95)
+scale = Vector2(0.51568, 0.458204)
+texture = SubResource("NoiseTexture2D_rf1m4")
+
+[node name="Leg L" type="Sprite2D" parent="Torso"]
+position = Vector2(159.666, 428.78)
+scale = Vector2(0.51568, 0.458204)
+texture = SubResource("NoiseTexture2D_rf1m4")
+
+[node name="Arm L" type="Sprite2D" parent="Torso"]
+position = Vector2(-533.408, 73.709)
+scale = Vector2(0.317073, 1.10836)
+texture = SubResource("NoiseTexture2D_rf1m4")
+
+[node name="Arm R" type="Sprite2D" parent="Torso"]
+position = Vector2(513.784, 14.2663)
+rotation = -0.230734
+scale = Vector2(0.317073, 1.10836)
+texture = SubResource("NoiseTexture2D_rf1m4")

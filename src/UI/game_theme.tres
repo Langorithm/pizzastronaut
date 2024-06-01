@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://jy7h66xc0dsf"]
+
+[ext_resource type="FontFile" uid="uid://bhs2wgebbs1pj" path="res://¡placeholders/CommitMonoNerdFont-Regular.otf" id="1_ec8ji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qeih"]
+bg_color = Color(0.768627, 0.768627, 0.768627, 0.141176)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[resource]
+default_font = ExtResource("1_ec8ji")
+Button/font_sizes/font_size = 5
+Button/styles/focus = SubResource("StyleBoxFlat_7qeih")
+Label/font_sizes/font_size = 5
+LabelHeadingL/base_type = &"Label"
+LabelHeadingL/colors/font_shadow_color = Color(0.0901961, 0.0901961, 0.0901961, 0.901961)
+LabelHeadingL/constants/shadow_offset_x = 2
+LabelHeadingL/constants/shadow_offset_y = 1
+LabelHeadingL/constants/shadow_outline_size = 2
+LabelHeadingL/font_sizes/font_size = 7
+LinkButton/colors/font_color = Color(1, 1, 1, 1)
+MarginContainer/constants/margin_bottom = 5
+MarginContainer/constants/margin_left = 5
+MarginContainer/constants/margin_right = 5
+MarginContainer/constants/margin_top = 5
+RichTextLabel/font_sizes/normal_font_size = 16
+RichTextLabel/fonts/normal_font = ExtResource("1_ec8ji")

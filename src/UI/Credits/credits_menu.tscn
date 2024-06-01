@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk8cbgpvqckhj"]
+
+[ext_resource type="PackedScene" uid="uid://dyflg822iu22c" path="res://UI/Credits/dev_card.tscn" id="1_gi0iw"]
+[ext_resource type="Script" path="res://UI/Credits/credits_menu.gd" id="1_nxcu6"]
+[ext_resource type="Texture2D" uid="uid://6mvu0dj36r2n" path="res://¡placeholders/df5f34f14ddc1560e6d75157191d8e8a.png" id="3_vft4o"]
+[ext_resource type="Texture2D" uid="uid://chvy1tmlnqbwk" path="res://¡placeholders/Screenshot 2024-05-16 at 1.57.25 AM.png" id="4_cqdsr"]
+[ext_resource type="Texture2D" uid="uid://j35vhhtx7s7k" path="res://¡placeholders/Screenshot 2024-05-16 at 1.58.57 AM.png" id="5_yxiwa"]
+[ext_resource type="Texture2D" uid="uid://dd6yr1tyqi66d" path="res://¡placeholders/Screenshot 2024-05-16 at 1.55.58 AM.png" id="6_jsnvd"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1w57r"]
+size = Vector2(350, 350)
+
+[node name="CreditsMenu" type="HBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 17.27
+script = ExtResource("1_nxcu6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.32
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DevCardsFlowContainer" type="HFlowContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/h_separation = 10
+alignment = 1
+
+[node name="DevCard" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+dev_name = "Jason"
+dev_description = "aliendogger.jpg"
+dev_picture = ExtResource("3_vft4o")
+
+[node name="DevCard2" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+dev_name = "Soto"
+dev_description = "i like drawing gokus"
+dev_picture = ExtResource("4_cqdsr")
+
+[node name="DevCard3" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+dev_name = "とんかつ"
+dev_description = "konichiwa desu"
+dev_picture = ExtResource("5_yxiwa")
+
+[node name="DevCard4" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+
+[node name="DevCard5" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+dev_name = "Real Human"
+dev_description = "Hello, do you happen to have anything [i]glutten free[/i]?"
+dev_picture = ExtResource("6_jsnvd")
+
+[node name="DevCard6" parent="VBoxContainer/DevCardsFlowContainer" instance=ExtResource("1_gi0iw")]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CardDetailsPanel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CardDetailsPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+
+[node name="CardDetails" type="VBoxContainer" parent="CardDetailsPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Picture" type="TextureRect" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = SubResource("PlaceholderTexture2D_1w57r")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Control" type="Control" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+
+[node name="Description" type="RichTextLabel" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.[/center]
+"
+fit_content = true
+
+[node name="Control2" type="Control" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+custom_minimum_size = Vector2(2.08165e-12, 30)
+layout_mode = 2
+size_flags_stretch_ratio = 0.3
+
+[node name="LinksContainer" type="HFlowContainer" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="CardDetailsPanel/MarginContainer/CardDetails/LinksContainer"]
+layout_mode = 2
+text = "LinkedIn"
+underline = 1
+uri = "https://linkedin.com"
+
+[node name="LinkButton2" type="LinkButton" parent="CardDetailsPanel/MarginContainer/CardDetails/LinksContainer"]
+layout_mode = 2
+text = "itch.io"
+underline = 1
+uri = "https://linkedin.com"
+
+[node name="LinkButton3" type="LinkButton" parent="CardDetailsPanel/MarginContainer/CardDetails/LinksContainer"]
+layout_mode = 2
+text = "GitHub"
+underline = 1
+uri = "https://linkedin.com"
+
+[node name="Control3" type="Control" parent="CardDetailsPanel/MarginContainer/CardDetails"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="child_entered_tree" from="VBoxContainer/DevCardsFlowContainer" to="." method="_on_dev_cards_flow_container_child_entered_tree"]

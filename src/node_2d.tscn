@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://wwmxgctqq853"]
+
+[ext_resource type="PackedScene" uid="uid://68ydftc85v40" path="res://World/Houses/npc_house.tscn" id="2_viaxw"]
+[ext_resource type="PackedScene" uid="uid://bexopky0lurg0" path="res://Player/player.tscn" id="3_v3eor"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="NPCHouse" parent="." instance=ExtResource("2_viaxw")]
+position = Vector2(1527, 219)
+
+[node name="NPCHouse2" parent="." instance=ExtResource("2_viaxw")]
+position = Vector2(1260, 922)
+
+[node name="NPCHouse3" parent="." instance=ExtResource("2_viaxw")]
+position = Vector2(2235, 1066)
+
+[node name="NPCHouse4" parent="." instance=ExtResource("2_viaxw")]
+position = Vector2(379, 841)
+
+[node name="NPCHouse5" parent="." instance=ExtResource("2_viaxw")]
+modulate = Color(0, 0.615686, 0.647059, 1)
+position = Vector2(-146, 125)
+
+[node name="Player" parent="." instance=ExtResource("3_v3eor")]
+position = Vector2(1302, 566)
+
+[node name="UI_Layer" type="CanvasLayer" parent="." groups=["UI_Layer"]]

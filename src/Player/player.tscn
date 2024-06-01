@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://bexopky0lurg0"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_atxpi"]
+[ext_resource type="Texture2D" uid="uid://cyog2dp0psx4w" path="res://¡placeholders/Screenshot 2024-05-16 at 1.55.15 AM.png" id="2_pbwdj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkpcl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pbwdj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sl2vl"]
+radius = 33.0151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1q24c"]
+radius = 33.0151
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(973, 469)
+motion_mode = 1
+script = ExtResource("1_atxpi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.191495, 0.191495)
+sprite_frames = SubResource("SpriteFrames_gkpcl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = -0.0411089
+shape = SubResource("CircleShape2D_sl2vl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+
+[node name="ActivationArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
+shape = SubResource("CircleShape2D_1q24c")
