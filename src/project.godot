@@ -19,17 +19,19 @@ config/icon="res://icon.png"
 [audio]
 
 buses/default_bus_layout="res://Sound/default_bus_layout.tres"
+driver/output_latency.web=100
 
 [autoload]
 
 SM="*res://Sound/SoundManager.gd"
 Quitautoload="*res://¡placeholders/quitautoload.gd"
+SC="*res://Globals/SceneChanger/SceneChanger.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/mode="viewport"
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
 
 [file_customization]
@@ -76,6 +78,8 @@ activate={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0.0901961, 0.168627, 1)

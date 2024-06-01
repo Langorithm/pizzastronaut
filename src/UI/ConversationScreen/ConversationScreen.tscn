@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyo70omif130t"]
+[gd_scene load_steps=10 format=3 uid="uid://dyo70omif130t"]
 
 [ext_resource type="Script" path="res://UI/ConversationScreen/ConversationScreen.gd" id="1_80s8o"]
 [ext_resource type="Theme" uid="uid://jy7h66xc0dsf" path="res://UI/game_theme.tres" id="1_ebms2"]
@@ -10,56 +10,31 @@ shader = ExtResource("1_l8mv2")
 shader_parameter/blur_strength = 1.0
 shader_parameter/blur_weight = 0.5
 
-[sub_resource type="Animation" id="Animation_off6f"]
-resource_name = "new_animation"
-length = 1.5
+[sub_resource type="Animation" id="Animation_t546y"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Control/NPCPortrait:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer/PlayerPortraitSlider:custom_minimum_size")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.8, 1.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 0, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(40, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer/Control/PlayerPortrait:modulate")
-tracks/1/interp = 2
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer/NPCPortraitSlider:custom_minimum_size")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(2, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0.701961, 0.701961, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("VBoxContainer/Control/PlayerPortrait:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2, 1),
-"update": 0,
-"values": [Vector2(-42, 368), Vector2(422, 368)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("VBoxContainer/Control/NPCPortrait:position")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.8, 1.5),
-"transitions": PackedFloat32Array(1, 2),
-"update": 0,
-"values": [Vector2(1581, 368), Vector2(1485, 368)]
+"values": [Vector2(20, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ax6hx"]
@@ -77,14 +52,66 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_off6f"]
+resource_name = "new_animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/HBoxContainer/NPCPortrait:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/HBoxContainer/PlayerPortrait:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(0, 0.701961, 0.701961, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/HBoxContainer/PlayerPortraitSlider:custom_minimum_size")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(40, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/HBoxContainer/NPCPortraitSlider:custom_minimum_size")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8hac5"]
 _data = {
+"RESET": SubResource("Animation_t546y"),
 "close": SubResource("Animation_ax6hx"),
 "new_animation": SubResource("Animation_off6f")
 }
 
 [node name="ConversationScreen" type="Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,6 +120,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ebms2")
 script = ExtResource("1_80s8o")
+metadata/_edit_horizontal_guides_ = [247.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ryeq1")
@@ -104,33 +132,52 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 1910.0
-offset_bottom = 1070.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 2
 
 [node name="Control2" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.24
+size_flags_stretch_ratio = 0.25
 
-[node name="Control" type="Control" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 10
 
-[node name="NPCPortrait" type="Sprite2D" parent="VBoxContainer/Control"]
-unique_name_in_owner = true
-modulate = Color(1, 0, 1, 0)
-position = Vector2(1581, 368)
-texture = ExtResource("2_dto0s")
+[node name="PlayerPortraitSlider" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
 
-[node name="PlayerPortrait" type="Sprite2D" parent="VBoxContainer/Control"]
+[node name="PlayerPortrait" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(0, 0.701961, 0.701961, 0)
-position = Vector2(-42, 368)
+layout_mode = 2
+size_flags_horizontal = 3
 texture = ExtResource("2_dto0s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NPCPortrait" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_dto0s")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="NPCPortraitSlider" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -150,10 +197,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 text = "Sure you do! Well, it all started when I was a little girl. It was certainly a time to be alive back then! You see, when I was born, I didn’t have all the fancy tools you kiddies have nowadays! We didn’t have all the high tech ships and gadgets! Why, we were just learning how to create inter dimensional travel! But …those are stories for different days.Now, there I was, in the park. Specifically the Andromeda Nebula 180-30-2B. A peaceful and sunny day that was! The sun was only a couple of centuries old! Still just a baby! Anyway there I was. In the park. I was probably about 220 years old. Say, do you offer any kind of senior discount?
 "
 autowrap_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -162,14 +212,16 @@ theme_override_constants/separation = 10
 [node name="Button" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 34
 text = "Uhhhhh"
 
 [node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 34
 text = "Interesting! Please tell me everything!"
+
+[node name="Control2" type="Control" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

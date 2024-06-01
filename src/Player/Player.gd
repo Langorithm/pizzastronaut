@@ -9,7 +9,14 @@ var speed_lvl_v: int = 0
 var speed_lvl_h: int = 0
 
 @onready var activation_area = %ActivationArea
+@onready var animated_sprite_2d = %AnimatedSprite2D
 
+
+func _input(event):
+	if event.as_text() == "N":
+		animated_sprite_2d.stop()
+	if event.as_text() == "B":
+		animated_sprite_2d.play()
 
 func _ready():
 	add_to_group("Player", true)
@@ -26,6 +33,7 @@ func _physics_process(delta):
 
 func accelerate(step: int, is_horizontal:bool):
 	if is_horizontal:
+		animated_sprite_2d.flip_h = step > 0
 		speed_lvl_h += step
 		speed_lvl_h = clamp(speed_lvl_h, -speed_levels, speed_levels)
 	else:

@@ -1,17 +1,56 @@
-[gd_scene load_steps=6 format=3 uid="uid://bexopky0lurg0"]
+[gd_scene load_steps=12 format=3 uid="uid://bexopky0lurg0"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_atxpi"]
-[ext_resource type="Texture2D" uid="uid://cyog2dp0psx4w" path="res://¡placeholders/Screenshot 2024-05-16 at 1.55.15 AM.png" id="2_pbwdj"]
+[ext_resource type="Texture2D" uid="uid://cjpmopevccove" path="res://Player/player.png" id="2_jf7hn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhjqm"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(0, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyi02"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(36, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj0u5"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(72, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62wen"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(108, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urqa6"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(144, 0, 36, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fmkr"]
+atlas = ExtResource("2_jf7hn")
+region = Rect2(180, 0, 36, 36)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gkpcl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pbwdj")
+"texture": SubResource("AtlasTexture_hhjqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyi02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj0u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62wen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urqa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fmkr")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 12.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sl2vl"]
@@ -21,13 +60,18 @@ radius = 33.0151
 radius = 33.0151
 
 [node name="Player" type="CharacterBody2D"]
+texture_filter = 1
 position = Vector2(973, 469)
 motion_mode = 1
 script = ExtResource("1_atxpi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.191495, 0.191495)
+unique_name_in_owner = true
+scale = Vector2(1.85203, 1.85203)
 sprite_frames = SubResource("SpriteFrames_gkpcl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.82115
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

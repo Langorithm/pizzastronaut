@@ -44,9 +44,8 @@ _data = {
 
 [node name="StartMenuBackground" type="Node2D"]
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
 follow_viewport_scale = 5.0
 scroll_offset = Vector2(450, 2.08165e-12)
 
@@ -89,16 +88,18 @@ texture_filter = 1
 motion_scale = Vector2(2, 2)
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 texture_filter = 1
 motion_scale = Vector2(3, 3)
 
 [node name="bg_clouds_purple" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+visible = false
 scale = Vector2(3.4, 3.4)
 texture = ExtResource("4_ljiqe")
 centered = false
 
 [node name="bg_clouds_purple2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+visible = false
+position = Vector2(6, 0)
 scale = Vector2(3.4, 3.4)
 texture = ExtResource("4_ljiqe")
 centered = false

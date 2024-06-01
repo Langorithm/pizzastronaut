@@ -1,13 +1,16 @@
 extends Node
 
-const MENU_MUSIC_LOOP = preload("res://¡placeholders/menu_music_loop.ogg")
+const WORLD = preload("res://World/World.tscn")
+
+@export var title_theme: AudioStream
+
 @onready var credits_container: TabContainer = %CreditsContainer
 @onready var start_buttons: VBoxContainer = %StartButtons
 @onready var options_menu: HBoxContainer = %OptionsMenu
 
 
 func _ready() -> void:
-	SM.play(MENU_MUSIC_LOOP, SM.CH_MUSIC)
+	SM.play(title_theme, SM.CH_MUSIC)
 	start_buttons.grab_focus()
 
 
@@ -17,7 +20,7 @@ func _input(event):
 
 
 func _on_start_button_pressed() -> void:
-	pass
+	SC.change_scene(WORLD)
 
 
 func _on_options_button_pressed() -> void:
