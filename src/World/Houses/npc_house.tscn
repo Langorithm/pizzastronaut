@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://68ydftc85v40"]
+[gd_scene load_steps=4 format=3 uid="uid://68ydftc85v40"]
 
 [ext_resource type="Script" path="res://World/Houses/npc_house.gd" id="1_7aji6"]
 [ext_resource type="Texture2D" uid="uid://0ckyj7rv54fa" path="res://¡placeholders/Screenshot 2024-05-31 145326.png" id="1_xckqs"]
-[ext_resource type="Texture2D" uid="uid://btkm1vp41ouew" path="res://¡placeholders/Guy-PNG-Picture.png" id="2_huxe7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhxxt"]
 size = Vector2(37, 43)
@@ -12,7 +11,6 @@ collision_layer = 2
 collision_mask = 0
 monitoring = false
 script = ExtResource("1_7aji6")
-npc_texture = ExtResource("2_huxe7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -26)

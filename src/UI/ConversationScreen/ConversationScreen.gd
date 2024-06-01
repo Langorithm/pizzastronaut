@@ -22,5 +22,11 @@ func appear():
 
 
 func _on_button_2_button_down():
+	close()
+	
+
+func close():
+	animation_player.play("close")
+	await animation_player.animation_finished
 	get_parent().remove_child(self)
 	queue_free()

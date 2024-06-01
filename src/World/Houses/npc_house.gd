@@ -4,6 +4,7 @@ class_name NPCHouse
 const CONVERSATION_SCREEN = preload("res://UI/ConversationScreen/ConversationScreen.tscn")
 
 @export var npc_texture: Texture2D
+@onready var sprite_2d:Sprite2D = $Sprite2D
 
 
 func activate():

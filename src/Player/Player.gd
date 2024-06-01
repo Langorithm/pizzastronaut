@@ -38,6 +38,7 @@ func try_activate():
 		var buildings = activation_area.get_overlapping_areas()
 		if buildings and buildings[0].has_method("activate"):
 			buildings[0].activate()
+			create_tween().tween_property(self,"velocity",Vector2.ZERO,0.15)
 			
 
 func _unhandled_input(event):
