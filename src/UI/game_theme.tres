@@ -29,6 +29,7 @@ expand_margin_bottom = 2.0
 
 [resource]
 default_font = ExtResource("1_ec8ji")
+default_font_size = 18
 Button/font_sizes/font_size = 24
 Button/styles/focus = SubResource("StyleBoxFlat_7qeih")
 Button/styles/normal = SubResource("StyleBoxFlat_cbveq")

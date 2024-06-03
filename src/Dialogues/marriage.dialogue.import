@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bb02ugd7647g1"
+path="res://.godot/imported/marriage.dialogue-09947bbff71f68983ddc5a61a47714d9.tres"
+
+[deps]
+
+source_file="res://Dialogues/marriage.dialogue"
+dest_files=["res://.godot/imported/marriage.dialogue-09947bbff71f68983ddc5a61a47714d9.tres"]
+
+[params]
+
+defaults=true

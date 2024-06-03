@@ -1,0 +1,26 @@
+~ start
+
+~ you_suck
+- Hey man, you're pretty cool
+	Vax: thanks man, you too
+	Player: really??
+	do increase_oxygen(1)
+	Vax: Yeah bro. I love you.
+	Vax: Bye
+	Player: Bye
+- Hey man, you're an asshole => mom_fucked
+#	do emote("bad")
+=> END
+
+~ mom_fucked
+Vax: Hah well I slept with your mom
+#	do emote("")
+do decrease_oxygen(1)
+Vax: And you know what else? 
+Vax: and you know what else?
+Vax: she's dumb
+do decrease_oxygen(1)
+#do win_over()
+Player: oh no
+
+=> END

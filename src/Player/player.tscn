@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bexopky0lurg0"]
+[gd_scene load_steps=23 format=3 uid="uid://bexopky0lurg0"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_atxpi"]
 [ext_resource type="Texture2D" uid="uid://cjpmopevccove" path="res://Player/player.png" id="2_jf7hn"]
+[ext_resource type="Script" path="res://UI/OxygenBar/OxygenBar.gd" id="3_85xm8"]
+[ext_resource type="Texture2D" uid="uid://blnrsdn8uswgc" path="res://Player/SmokeFX Lite SpriteSheet 2A-1.png" id="4_npvoq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhjqm"]
 atlas = ExtResource("2_jf7hn")
@@ -53,11 +55,73 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5o4hn"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1jhl"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qsa6"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d371e"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hevhs"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxjbq"]
+atlas = ExtResource("4_npvoq")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_654v5"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5o4hn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1jhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qsa6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d371e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hevhs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxjbq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"propel",
+"speed": 12.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sl2vl"]
 radius = 33.0151
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1q24c"]
 radius = 33.0151
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2k47v"]
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.827451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksahx"]
+bg_color = Color(1, 1, 1, 0.827451)
 
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
@@ -71,7 +135,40 @@ scale = Vector2(1.85203, 1.85203)
 sprite_frames = SubResource("SpriteFrames_gkpcl")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.82115
+
+[node name="SmokeVFXR" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(54, -15)
+rotation = 0.39495
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_654v5")
+animation = &"propel"
+flip_h = true
+
+[node name="SmokeVFXL" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-64, -17)
+rotation = -0.189905
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_654v5")
+animation = &"propel"
+
+[node name="SmokeVFXU" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(8, -69)
+rotation = 1.0123
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_654v5")
+animation = &"propel"
+
+[node name="SmokeVFXD" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(11, 75)
+rotation = 2.02658
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_654v5")
+animation = &"propel"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -94,3 +191,35 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActivationArea"]
 shape = SubResource("CircleShape2D_1q24c")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OxygenTimer" type="Timer" parent="."]
+process_callback = 0
+
+[node name="OxygenBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 1, 1)
+offset_left = -49.0
+offset_top = 35.0
+offset_right = 51.0
+offset_bottom = 45.0
+pivot_offset = Vector2(50, 5)
+theme_override_styles/background = SubResource("StyleBoxFlat_2k47v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ksahx")
+value = 50.0
+show_percentage = false
+script = ExtResource("3_85xm8")
+decreased_color = Color(0.603922, 0.0627451, 0.290196, 1)
+
+[connection signal="timeout" from="OxygenTimer" to="." method="_on_oxygen_timer_timeout"]

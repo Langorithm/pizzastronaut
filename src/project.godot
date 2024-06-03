@@ -28,7 +28,13 @@ Quitautoload="*res://¡placeholders/quitautoload.gd"
 SC="*res://Globals/SceneChanger/SceneChanger.gd"
 InputManager="*res://addons/GodotTouchInputManager/InputManager.gd"
 MobileInputHandler="*res://addons/GodotTouchInputManager/MobileInputHandler.gd"
-__InkRuntime="*res://addons/inkgd/ink_runtime.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Globals="*res://Globals/Globals.gd"
+
+[dialogue_manager]
+
+general/balloon_path="res://UI/DialogBox/balloon.tscn"
+general/states=["Globals"]
 
 [display]
 
@@ -40,7 +46,7 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/inkgd/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [file_customization]
 
@@ -86,6 +92,10 @@ activate={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogues/test.dialogue", "res://Dialogues/marriage.dialogue")
 
 [layer_names]
 

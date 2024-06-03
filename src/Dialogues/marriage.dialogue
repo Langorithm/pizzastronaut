@@ -1,0 +1,34 @@
+˜ Start
+
+Vorkus: Oh, kon’nichiwa! Are you the pizza guy?
+do decrease_oxygen(1)
+do emote("")
+
+
+˜ Choice_1
+- Uhh yeah? => Choice_2
+Zarusha: You seem too small, sweetie. Almost like a Human
+Vorkus: Bikkuri Suru, A HUMAN!!! IT CAN’T BE
+do decrease_oxygen(1)
+Player: Well ye- yeah. That’s what i am
+- Here you have ma’am, i’ll leave now
+
+=> END
+
+
+~ Choice_2
+do emote("happy")
+Zarusha: Darlin’, yer sweeter than a pitcher of Texas tea! Why, if I were a younger woman who wasn’t so in love with this ol’lug over here, I’d be all over you like barbecue sauce on a rack o’ ribs!
+do decrease_oxygen(2)
+
+- Well i’d hate to break up this beautiful couple
+Vorkus: Arigato gozaimasu! You’re very kind
+do increase_oxygen(5)
+Zarusha: Thank you, sugar. I do love my big, soft hubby Vorky
+Vorkus: And I love you, Zaru-chan!
+do win_over()
+- I can’t take this anymore
+do emote("bad")
+Vorkus: Ura Ura, that’s not very nice of you
+do decrease_oxygen(2)
+=> END
