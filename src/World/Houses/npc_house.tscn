@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://68ydftc85v40"]
+[gd_scene load_steps=6 format=3 uid="uid://68ydftc85v40"]
 
+[ext_resource type="Shader" path="res://World/Houses/grayscale.gdshader" id="1_6dju6"]
 [ext_resource type="Script" path="res://World/Houses/npc_house.gd" id="1_7aji6"]
 [ext_resource type="Texture2D" uid="uid://0ckyj7rv54fa" path="res://¡placeholders/Screenshot 2024-05-31 145326.png" id="1_xckqs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uaew"]
+shader = ExtResource("1_6dju6")
+shader_parameter/active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhxxt"]
 size = Vector2(37, 43)
 
 [node name="NPCHouse" type="Area2D"]
+material = SubResource("ShaderMaterial_4uaew")
 collision_layer = 2
 collision_mask = 0
 monitoring = false
 script = ExtResource("1_7aji6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+use_parent_material = true
 position = Vector2(0, -26)
 scale = Vector2(0.38115, 0.38115)
 texture = ExtResource("1_xckqs")
