@@ -16,15 +16,21 @@ texture_filter = 1
 
 [node name="NPCHouse" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(1527, 219)
+npc = 2
+conversation = ExtResource("7_ruwbg")
 
 [node name="NPCHouse2" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(1260, 922)
+npc = 3
+conversation = ExtResource("7_ruwbg")
 
 [node name="NPCHouse3" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(2235, 1066)
+conversation = ExtResource("7_ruwbg")
 
 [node name="NPCHouse4" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(546, 844)
+conversation = ExtResource("7_ruwbg")
 
 [node name="NPCHouse5" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(-146, 126)
@@ -33,6 +39,7 @@ conversation = ExtResource("2_0n6qn")
 [node name="NPCHouse6" parent="." instance=ExtResource("1_yv12u")]
 material = SubResource("ShaderMaterial_3pdq8")
 position = Vector2(475, 196)
+npc = 1
 conversation = ExtResource("7_ruwbg")
 
 [node name="Player" parent="." instance=ExtResource("7_veswy")]
