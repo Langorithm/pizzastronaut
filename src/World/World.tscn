@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://cxjosqjalnd6j" path="res://World/Background/bg_planets3.png" id="12_0nltd"]
 [ext_resource type="Resource" uid="uid://dyoy3d07y78oa" path="res://Dialogues/Vanila.dialogue" id="12_s1mys"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j04sa"]
+shader = ExtResource("6_dhd4i")
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_84108"]
 radius = 2329.68
 
@@ -65,11 +68,95 @@ shader_parameter/active = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hmbo1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j04sa"]
-shader = ExtResource("6_dhd4i")
-
 [node name="World" type="Node2D"]
 texture_filter = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="stars" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.04, 0.04)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="BgStars" type="Sprite2D" parent="ParallaxBackground/stars"]
+texture = ExtResource("6_gef55")
+
+[node name="BgStars2" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 540)
+texture = ExtResource("6_gef55")
+
+[node name="BgStars3" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 0)
+texture = ExtResource("6_gef55")
+
+[node name="BgStars4" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(0, 540)
+texture = ExtResource("6_gef55")
+
+[node name="dust" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 1080)
+
+[node name="BgDust" type="Sprite2D" parent="ParallaxBackground/dust"]
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust2" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 540)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust3" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 0)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust4" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(175, 626)
+texture = ExtResource("6_awe3c")
+
+[node name="nebulae" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 1080)
+
+[node name="Nebulae" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae3" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(0, 540)
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae2" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(540, 0)
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae4" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(540, 540)
+texture = ExtResource("7_ig140")
+
+[node name="planets" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="BgPlanets0" type="Sprite2D" parent="ParallaxBackground/planets"]
+texture = ExtResource("9_iys0c")
+
+[node name="BgPlanets1" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(-178, 613)
+texture = ExtResource("10_lin7j")
+
+[node name="BgPlanets2" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(1097, -52)
+texture = ExtResource("11_5ihct")
+
+[node name="BgPlanets3" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(939, 592)
+texture = ExtResource("12_0nltd")
 
 [node name="Border" type="Area2D" parent="."]
 collision_layer = 0
@@ -121,7 +208,7 @@ metadata/_edit_lock_ = true
 
 [node name="NPCHouse2" type="Area2D" parent="."]
 material = SubResource("ShaderMaterial_xhoic")
-position = Vector2(-205, 997)
+position = Vector2(88, 1666)
 collision_layer = 2
 script = ExtResource("2_8cw57")
 npc = 4
@@ -141,7 +228,7 @@ metadata/_edit_lock_ = true
 
 [node name="NPCHouse3" type="Area2D" parent="."]
 material = SubResource("ShaderMaterial_xe65g")
-position = Vector2(412, 28)
+position = Vector2(510, 558)
 collision_layer = 2
 script = ExtResource("2_8cw57")
 conversation = ExtResource("2_0n6qn")
@@ -180,7 +267,7 @@ metadata/_edit_lock_ = true
 
 [node name="NPCHouse5" type="Area2D" parent="."]
 material = SubResource("ShaderMaterial_7k5i1")
-position = Vector2(610, 494)
+position = Vector2(333, -87)
 collision_layer = 2
 script = ExtResource("2_8cw57")
 npc = 1
@@ -224,115 +311,6 @@ max_speed = 750
 speed_levels = 5
 
 [node name="UI_Layer" type="CanvasLayer" parent="." groups=["UI_Layer"]]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="stars" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-motion_scale = Vector2(0.04, 0.04)
-motion_mirroring = Vector2(1920, 1080)
-
-[node name="BgStars" type="Sprite2D" parent="ParallaxBackground/stars"]
-texture = ExtResource("6_gef55")
-
-[node name="BgStars2" type="Sprite2D" parent="ParallaxBackground/stars"]
-position = Vector2(960, 540)
-texture = ExtResource("6_gef55")
-
-[node name="BgStars3" type="Sprite2D" parent="ParallaxBackground/stars"]
-position = Vector2(960, 0)
-texture = ExtResource("6_gef55")
-
-[node name="BgStars4" type="Sprite2D" parent="ParallaxBackground/stars"]
-position = Vector2(0, 540)
-texture = ExtResource("6_gef55")
-
-[node name="dust" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-scale = Vector2(2, 2)
-motion_scale = Vector2(0.1, 0.1)
-motion_mirroring = Vector2(1080, 1080)
-
-[node name="BgDust" type="Sprite2D" parent="ParallaxBackground/dust"]
-texture = ExtResource("6_awe3c")
-
-[node name="BgDust2" type="Sprite2D" parent="ParallaxBackground/dust"]
-position = Vector2(540, 540)
-texture = ExtResource("6_awe3c")
-
-[node name="BgDust3" type="Sprite2D" parent="ParallaxBackground/dust"]
-position = Vector2(540, 0)
-texture = ExtResource("6_awe3c")
-
-[node name="BgDust5" type="Sprite2D" parent="ParallaxBackground/dust"]
-visible = false
-position = Vector2(1080, 540)
-texture = ExtResource("6_awe3c")
-
-[node name="BgDust6" type="Sprite2D" parent="ParallaxBackground/dust"]
-visible = false
-position = Vector2(1080, 0)
-texture = ExtResource("6_awe3c")
-
-[node name="BgDust4" type="Sprite2D" parent="ParallaxBackground/dust"]
-position = Vector2(0, 540)
-texture = ExtResource("6_awe3c")
-
-[node name="nebulae" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-scale = Vector2(2, 2)
-motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(1080, 1080)
-
-[node name="Nebulae" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-material = SubResource("ShaderMaterial_j04sa")
-texture = ExtResource("7_ig140")
-
-[node name="Nebulae3" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-material = SubResource("ShaderMaterial_j04sa")
-position = Vector2(0, 540)
-texture = ExtResource("7_ig140")
-
-[node name="Nebulae2" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-material = SubResource("ShaderMaterial_j04sa")
-position = Vector2(540, 0)
-texture = ExtResource("7_ig140")
-
-[node name="Nebulae4" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-material = SubResource("ShaderMaterial_j04sa")
-position = Vector2(540, 540)
-texture = ExtResource("7_ig140")
-
-[node name="Nebulae5" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-visible = false
-material = SubResource("ShaderMaterial_j04sa")
-position = Vector2(1080, 0)
-texture = ExtResource("7_ig140")
-
-[node name="Nebulae6" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-visible = false
-material = SubResource("ShaderMaterial_j04sa")
-position = Vector2(1080, 540)
-texture = ExtResource("7_ig140")
-
-[node name="planets" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-motion_scale = Vector2(0.3, 0.3)
-
-[node name="BgPlanets0" type="Sprite2D" parent="ParallaxBackground/planets"]
-texture = ExtResource("9_iys0c")
-
-[node name="BgPlanets1" type="Sprite2D" parent="ParallaxBackground/planets"]
-position = Vector2(-178, 613)
-texture = ExtResource("10_lin7j")
-
-[node name="BgPlanets2" type="Sprite2D" parent="ParallaxBackground/planets"]
-position = Vector2(1097, -52)
-texture = ExtResource("11_5ihct")
-
-[node name="BgPlanets3" type="Sprite2D" parent="ParallaxBackground/planets"]
-position = Vector2(939, 592)
-texture = ExtResource("12_0nltd")
 
 [connection signal="body_exited" from="Border" to="Border" method="_on_body_exited"]
 [connection signal="body_entered" from="NPCHouse" to="NPCHouse" method="_on_body_entered"]

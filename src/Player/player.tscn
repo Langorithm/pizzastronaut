@@ -230,10 +230,8 @@ material = SubResource("ShaderMaterial_nkn5f")
 position = Vector2(0, -51)
 rotation = -0.786723
 sprite_frames = SubResource("SpriteFrames_iy5we")
-animation = &"exclamation"
+animation = &"RESET"
 autoplay = "RESET"
-frame = 7
-frame_progress = 1.0
 
 [node name="SmokeVFXR" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
