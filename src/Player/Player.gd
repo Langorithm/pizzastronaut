@@ -76,11 +76,12 @@ func try_activate():
 			oxygen_timer.stop()
 			conversation_screen.tree_exiting.connect(
 				func():
-					pass
-					#get_tree().create_timer(grace_period_secs).timeout.connect(oxygen_timer.start)
+					await get_tree().create_timer(grace_period_secs)
+					oxygen_timer.start()
 			)
-			create_tween().tween_property(self,"velocity",Vector2.ZERO,1)
-			
+			speed_lvl_h = 0
+			speed_lvl_v = 0
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("move_up"):
