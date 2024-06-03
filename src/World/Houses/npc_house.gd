@@ -17,7 +17,9 @@ func activate() -> ConversationScreen:
 	conversation_screen.appear()
 
 	conversation_screen.tree_exiting.connect(
-		func(): set_collision_layer_value(2, false)
+		func():
+			set_collision_layer_value(2, false)
+			(material as ShaderMaterial).set_shader_parameter("active", true)
 	)
 	
 	return conversation_screen
