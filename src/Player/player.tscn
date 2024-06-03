@@ -82,7 +82,7 @@ region = Rect2(320, 0, 64, 64)
 [sub_resource type="SpriteFrames" id="SpriteFrames_654v5"]
 animations = [{
 "frames": [{
-"duration": 0.1,
+"duration": 1.0,
 "texture": null
 }, {
 "duration": 1.0,

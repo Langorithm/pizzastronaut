@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://dyo70omif130t"]
+[gd_scene load_steps=19 format=3 uid="uid://dyo70omif130t"]
 
 [ext_resource type="Script" path="res://UI/ConversationScreen/ConversationScreen.gd" id="1_80s8o"]
 [ext_resource type="Theme" uid="uid://jy7h66xc0dsf" path="res://UI/game_theme.tres" id="1_ebms2"]
 [ext_resource type="Shader" path="res://¡placeholders/boxblur.gdshader" id="1_l8mv2"]
 [ext_resource type="Texture2D" uid="uid://btkm1vp41ouew" path="res://¡placeholders/Guy-PNG-Picture.png" id="2_dto0s"]
-[ext_resource type="Texture2D" uid="uid://cxkac4uem73li" path="res://¡placeholders/vax with gradiation.png" id="5_4u4i5"]
 [ext_resource type="Script" path="res://UI/OxygenBar/OxygenBar.gd" id="5_r3hno"]
 [ext_resource type="Shader" path="res://UI/ConversationScreen/TransparentGradient.gdshader" id="6_vw2bh"]
 [ext_resource type="Texture2D" uid="uid://ds7f3n07fhww3" path="res://vax angry.png" id="7_ti3ad"]
@@ -123,7 +122,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ebms2")
 script = ExtResource("1_80s8o")
-npc_texture = ExtResource("5_4u4i5")
 metadata/_edit_horizontal_guides_ = [24.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -134,17 +132,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="OxygenBar" type="ProgressBar" parent="."]
-modulate = Color(0, 1, 1, 1)
-layout_mode = 0
-offset_left = 19.0
-offset_top = 247.0
-offset_right = 477.0
-offset_bottom = 287.0
-value = 50.0
-show_percentage = false
-script = ExtResource("5_r3hno")
 
 [node name="PlayerPortrait" type="TextureRect" parent="."]
 unique_name_in_owner = true
@@ -172,6 +159,17 @@ scale = Vector2(3, 3)
 size_flags_horizontal = 3
 texture = ExtResource("7_ti3ad")
 stretch_mode = 4
+
+[node name="OxygenBar" type="ProgressBar" parent="."]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 290.0
+offset_right = 395.0
+offset_bottom = 306.0
+value = 50.0
+show_percentage = false
+script = ExtResource("5_r3hno")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
