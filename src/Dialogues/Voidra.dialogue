@@ -7,9 +7,16 @@ do decrease_oxygen(1)
 do increase_oxygen(2)
 ~ Choice_2
 do emote("happy")
-Voidra: OWWW TH-TH-TH-THANK YOU BYE!!!!
+Voidra: OWWW Th-Th-Th-Thank you!!! Not many people understand me
 do increase_oxygen(2)
 do win_over()
+- Haha, cheers fellow => END
+- If you ever need someone to talk with... => Cool_end
+=> END
+~ Cool_end
+do emote("happy")
+Voidra: I call for a pizza :D
+do increase_oxygen(2)
 => END
 ~ Choice_2_bad
 Voidra: S-s-s-sorry pizza guy...
