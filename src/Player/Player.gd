@@ -78,7 +78,7 @@ func pass_out():
 			speed_lvl_h = 0
 			speed_lvl_v = 0
 	)
-	t.tween_property(color_rect, "color", Color.TRANSPARENT.darkened(0.8), 1.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+	t.tween_property(color_rect, "color", Color.TRANSPARENT.darkened(0.9), 1.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 
 
 func accelerate(step: int, is_horizontal:bool):
