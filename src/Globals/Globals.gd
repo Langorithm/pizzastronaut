@@ -58,7 +58,10 @@ func decrease_oxygen(o2):
 		active_conversation.change_texture(PLAYER_LOST_O2,true)
 		await get_tree().create_timer(0.75).timeout
 		if player.oxygen == 0:
-			player_active_portrait = PLAYER_O2_EMPTY
+			if player_active_portrait == PLAYER_O2_EMPTY:
+				player.pass_out()
+			else:
+				player_active_portrait = PLAYER_O2_EMPTY
 		active_conversation.change_texture(player_active_portrait,true)
 
 
