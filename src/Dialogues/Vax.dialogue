@@ -1,0 +1,28 @@
+~ start
+do emote("")
+Vax: Hey dude, thanks for the pizza.
+- Sure => END
+- Thank you so much for your patronage, sir! => Choice_2_B
+- Anything for the great Professor X! => Choice_2_C
+~ Choice_2_B
+do emote("bad")
+Vax: Yeah... totally.
+do decrease_oxygen(1)
+- Have a good night => END
+- Please let me know if there’s anything else I can do for you! => Choice_3_B
+~ Choice_2_C
+do emote("happy")
+Vax: That was great! Been a while since I was messed with and not talked down to pitifully.
+do increase_oxygen(2)
+-  I’ll let you get to your food => END
+- For a second there I was worried I’d offend you => Choice_4
+~ Choice_3_B
+do emote("bad")
+Vax: It’s okay... I’m fine. Bye.
+do decrease_oxygen(3)
+=> END
+~ Choice_4
+Vax: No way, bro! Keep those jokes coming at me and I’ll keep ordering more pizzas!
+do increase_oxygen(2)
+do win_over()
+=> END

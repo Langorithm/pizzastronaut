@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://c4mnjgd2u0inw"
+path="res://.godot/imported/Gorama.dialogue-4603a1ac6beb5cccc7d76a32e097e628.tres"
+
+[deps]
+
+source_file="res://Dialogues/Gorama.dialogue"
+dest_files=["res://.godot/imported/Gorama.dialogue-4603a1ac6beb5cccc7d76a32e097e628.tres"]
+
+[params]
+
+defaults=true

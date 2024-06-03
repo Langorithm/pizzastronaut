@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://1dqls62uk5yq"
+path="res://.godot/imported/Radio.dialogue-a17ab68f829f644ccb67d0b0641e1f83.tres"
+
+[deps]
+
+source_file="res://Dialogues/Radio.dialogue"
+dest_files=["res://.godot/imported/Radio.dialogue-a17ab68f829f644ccb67d0b0641e1f83.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,24 @@
+~ start
+do emote("happy")
+Radio: Goooooood MORNING, VIETNAAAAM!
+do increase_oxygen(1)
+
+- What the heck? => Choice_1_Bad
+- Hey! Here’s your pizza, enjoy! => Choice_2
+
+~ Choice_1_Bad
+do emote("bad")
+Radio: ... Sorry, it was a joke
+=> END
+~ Choice_2
+Radio:  Krusty Krab Pizza! Is the pizza! For you and me!
+- *joins in* => Choice_3
+- Right... i'm gonna go
+~ Choice_3
+do emote("happy")
+Player: Krusty Kra-ya-ya-ya-ya-yab Pizzaaaaa
+Radio: Louis, I think this is the beginning of a beautiful friendship.
+Player: Hahaha, i hope so. See you around captain
+do win_over()
+do increase_oxygen(4)
+=> END

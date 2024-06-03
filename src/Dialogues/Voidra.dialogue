@@ -1,0 +1,16 @@
+~ start
+do emote("")
+Voidra: Well, you see... I’m not actually a hologram. It’s just... a representation I use to t-t-talk to people... because I’m shy. I’m actually... umm... the embodiment of dark matter. L-like a black hole. I analyze and... absorb food on a m-molecular level. S-so I don’t need a mouth. O-or a body.
+do decrease_oxygen(1)
+- Ugh creepy => Choice_2_bad
+- That's so cool!!! Totally Metal => Choice_2
+do increase_oxygen(2)
+~ Choice_2
+do emote("happy")
+Voidra: OWWW TH-TH-TH-THANK YOU BYE!!!!
+do increase_oxygen(2)
+do win_over()
+=> END
+~ Choice_2_bad
+Voidra: S-s-s-sorry pizza guy...
+=> END
