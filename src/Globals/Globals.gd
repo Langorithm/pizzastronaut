@@ -9,8 +9,16 @@ const DX_03 = preload("res://Sound/SFX/Alien Dialogue/Dx_03.ogg")
 const DX_04 = preload("res://Sound/SFX/Alien Dialogue/Dx_04.ogg")
 const DIALOGUE_GAIN_O2 = preload("res://Sound/SFX/Player Emotes/Player_SighRelief_GainO2.ogg")
 const DIALOGUE_LOSE_O2 = preload("res://Sound/SFX/Player Emotes/Player_Groan_LoseO2.ogg")
+const PLAYER_GAIN_O2 = preload("res://Portraits/player_large_gain_o2.png")
+const PLAYER_LOST_O2 = preload("res://Portraits/player_large_lost_o2.png")
+const PLAYER_HIGH_O2 = preload("res://Portraits/player_large_high_o2.png")
+const PLAYER_LOW_O2 = preload("res://Portraits/player_large_low_o2.png")
+const PLAYER_MID_O2 = preload("res://Portraits/player_large_mid_o2.png")
+const PLAYER_O2_CRITICAL = preload("res://Portraits/player_large_o2_critical.png")
+const PLAYER_O2_EMPTY = preload("res://Portraits/player_large_o2_empty.png")
 
 var player: Player
+var player_active_portrait: Texture2D
 var active_conversation: ConversationScreen
 
 var won_npcs = {}
@@ -21,6 +29,7 @@ func _ready():
 	var fetch_p = func():
 		player = get_tree().get_first_node_in_group("Player")
 	fetch_p.call_deferred()
+	player_active_portrait = PLAYER_HIGH_O2
 	
 	for npc_name in NPCs.keys():
 		npc_name = npc_name.to_lower()
@@ -38,11 +47,17 @@ func _ready():
 func increase_oxygen(o2):
 	if player:
 		player.increase_oxygen(o2)	
-		SM.play(DIALOGUE_GAIN_O2,SM.CH_SFX)		
+		SM.play(DIALOGUE_GAIN_O2,SM.CH_SFX)
+		active_conversation.change_texture(PLAYER_GAIN_O2,true)
+		await get_tree().create_timer(0.75).timeout
+		active_conversation.change_texture(player_active_portrait,true)
 func decrease_oxygen(o2):
 	if player:
 		player.decrease_oxygen(o2)
 		SM.play(DIALOGUE_LOSE_O2,SM.CH_SFX)
+		active_conversation.change_texture(PLAYER_LOST_O2,true)
+		await get_tree().create_timer(0.75).timeout
+		active_conversation.change_texture(player_active_portrait,true)
 
 
 func win_over():
