@@ -70,7 +70,10 @@ func decrease_oxygen(o2):
 	oxygen -= oxygen_removed
 	if oxygen_removed:
 		oxygen_level_changed.emit(-oxygen_removed, oxygen)
-
+	if oxygen == 0:
+		if Globals.active_conversation:
+			await Globals.active_conversation.tree_exited
+		pass_out()
 
 func pass_out():
 	var color_rect = _transition_screen.get_child(0)
