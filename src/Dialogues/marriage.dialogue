@@ -1,17 +1,16 @@
-˜ Start
-
+~ start
 Vorkus: Oh, kon’nichiwa! Are you the pizza guy?
 do decrease_oxygen(1)
 do emote("")
 
 
-˜ Choice_1
+~ Choice_1
 - Uhh yeah? => Choice_2
 Zarusha: You seem too small, sweetie. Almost like a Human
 Vorkus: Bikkuri Suru, A HUMAN!!! IT CAN’T BE
 do decrease_oxygen(1)
 Player: Well ye- yeah. That’s what i am
-- Here you have ma’am, i’ll leave now
+- Here you have ma’am, i’ll leave now => END
 
 => END
 

@@ -14,14 +14,16 @@ func _ready():
 	fetch_p.call_deferred()
 
 func increase_oxygen(o2):
-	player.increase_oxygen(o2)	
+	if player:
+		player.increase_oxygen(o2)	
 func decrease_oxygen(o2):
-	player.decrease_oxygen(o2)	
+	if player:
+		player.decrease_oxygen(o2)
 
 
 func win_over():
 	pass
 
 
-func emote():
+func emote(emotion: String):
 	pass
