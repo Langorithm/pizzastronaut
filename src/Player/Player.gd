@@ -8,11 +8,15 @@ signal oxygen_level_changed(ammount_added: int, current_oxygen: int)
 @export var speed_levels: int = 4
 @export_category("Oxygen")
 @export var max_oxygen: int = 10
+@export var lowest_max_oxygen: int = 5
+@export var pass_out_penalty: int = 1
 @export var oxygen_depleted_per_round: int = 1
 @export var round_duration_secs: float = 6
 @export var grace_period_secs: float = 2
 
+const VOID_LOSE_O2 = preload("res://Sound/SFX/Player Emotes/Player_Sigh_LoseO2_Env.ogg")
 const JETPACK_THRUSTER = preload("res://Sound/SFX/Jetpack_Thruster.ogg")
+
 var randomized_thruster
 
 var acc: float
@@ -22,6 +26,7 @@ var oxygen: int
 
 @onready var oxygen_timer = $OxygenTimer
 @onready var activation_area = %ActivationArea
+@onready var oxygen_bar = $OxygenBar
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
 @onready var smoke_vfxr = %SmokeVFXR
@@ -66,6 +71,7 @@ func decrease_oxygen(o2):
 	if oxygen_removed:
 		oxygen_level_changed.emit(-oxygen_removed, oxygen)
 
+
 func pass_out():
 	var color_rect = _transition_screen.get_child(0)
 	var t = create_tween()
@@ -77,6 +83,9 @@ func pass_out():
 			global_position = Vector2.ZERO
 			speed_lvl_h = 0
 			speed_lvl_v = 0
+			max_oxygen = max(max_oxygen-pass_out_penalty,lowest_max_oxygen)
+			oxygen = max_oxygen
+			oxygen_bar.value = max_oxygen
 	)
 	t.tween_property(color_rect, "color", Color.TRANSPARENT.darkened(0.9), 1.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
 
@@ -142,4 +151,5 @@ func propel(thruster: AnimatedSprite2D):
 	
 func _on_oxygen_timer_timeout():
 	decrease_oxygen(oxygen_depleted_per_round)
+	SM.play(VOID_LOSE_O2,SM.CH_SFX)
 

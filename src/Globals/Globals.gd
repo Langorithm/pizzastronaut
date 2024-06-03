@@ -7,6 +7,8 @@ const DX_01 = preload("res://Sound/SFX/Alien Dialogue/Dx_01.ogg")
 const DX_02 = preload("res://Sound/SFX/Alien Dialogue/Dx_02.ogg")
 const DX_03 = preload("res://Sound/SFX/Alien Dialogue/Dx_03.ogg")
 const DX_04 = preload("res://Sound/SFX/Alien Dialogue/Dx_04.ogg")
+const DIALOGUE_GAIN_O2 = preload("res://Sound/SFX/Player Emotes/Player_SighRelief_GainO2.ogg")
+const DIALOGUE_LOSE_O2 = preload("res://Sound/SFX/Player Emotes/Player_Groan_LoseO2.ogg")
 
 var player: Player
 var active_conversation: ConversationScreen
@@ -36,9 +38,11 @@ func _ready():
 func increase_oxygen(o2):
 	if player:
 		player.increase_oxygen(o2)	
+		SM.play(DIALOGUE_GAIN_O2,SM.CH_SFX)		
 func decrease_oxygen(o2):
 	if player:
 		player.decrease_oxygen(o2)
+		SM.play(DIALOGUE_LOSE_O2,SM.CH_SFX)
 
 
 func win_over():
