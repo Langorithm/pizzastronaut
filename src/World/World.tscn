@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://chvy1tmlnqbwk" path="res://¡placeholders/Screenshot 2024-05-16 at 1.57.25 AM.png" id="4_w6x5e"]
 [ext_resource type="Texture2D" uid="uid://6mvu0dj36r2n" path="res://¡placeholders/df5f34f14ddc1560e6d75157191d8e8a.png" id="5_qhteh"]
 [ext_resource type="Texture2D" uid="uid://ds7f3n07fhww3" path="res://vax angry.png" id="6_7y7qc"]
+[ext_resource type="Resource" uid="uid://bb02ugd7647g1" path="res://Dialogues/marriage.dialogue" id="7_4rkcl"]
 [ext_resource type="Texture2D" uid="uid://dxxkqd7vk10p5" path="res://¡placeholders/prueba.png" id="7_g3rnf"]
-[ext_resource type="Resource" uid="uid://drvhiq110q04p" path="res://Dialogues/test.dialogue" id="7_ruwbg"]
 [ext_resource type="PackedScene" uid="uid://bexopky0lurg0" path="res://Player/player.tscn" id="7_veswy"]
 [ext_resource type="Texture2D" uid="uid://cbwe6xt2gwtjw" path="res://¡placeholders/spacebg/stars.png" id="8_xk447"]
 [ext_resource type="Texture2D" uid="uid://3qdcmp4v8cie" path="res://¡placeholders/spacebg/nebulae.png" id="9_b7yys"]
@@ -38,13 +38,12 @@ npc_texture = ExtResource("5_qhteh")
 [node name="NPCHouse5" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(-146, 125)
 npc_texture = ExtResource("6_7y7qc")
-conversation = ExtResource("7_ruwbg")
+conversation = ExtResource("7_4rkcl")
 
 [node name="NPCHouse6" parent="." instance=ExtResource("1_yv12u")]
 material = SubResource("ShaderMaterial_3pdq8")
 position = Vector2(475, 196)
 npc_texture = ExtResource("7_g3rnf")
-conversation = ExtResource("7_ruwbg")
 
 [node name="Player" parent="." instance=ExtResource("7_veswy")]
 position = Vector2(0, 0)
