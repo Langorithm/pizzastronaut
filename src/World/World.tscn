@@ -39,9 +39,6 @@ conversation = ExtResource("7_ruwbg")
 position = Vector2(0, 0)
 max_speed = 750
 speed_levels = 5
-max_oxygen = 30
-round_duration_secs = 1.0
-grace_period_secs = 15.0
 
 [node name="UI_Layer" type="CanvasLayer" parent="." groups=["UI_Layer"]]
 
