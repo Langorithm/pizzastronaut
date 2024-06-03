@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dyoy3d07y78oa"
+path="res://.godot/imported/Vanila.dialogue-4ff60dcfbf75e6c0ced5c313bee4d8f6.tres"
+
+[deps]
+
+source_file="res://Dialogues/Vanila.dialogue"
+dest_files=["res://.godot/imported/Vanila.dialogue-4ff60dcfbf75e6c0ced5c313bee4d8f6.tres"]
+
+[params]
+
+defaults=true

@@ -1,18 +1,23 @@
-[gd_scene load_steps=15 format=3 uid="uid://wwmxgctqq853"]
+[gd_scene load_steps=20 format=3 uid="uid://wwmxgctqq853"]
 
 [ext_resource type="PackedScene" uid="uid://68ydftc85v40" path="res://World/Houses/npc_house.tscn" id="1_yv12u"]
 [ext_resource type="Texture2D" uid="uid://dfbn1lc2cbddj" path="res://¡placeholders/Guy-PNG-File.png" id="2_hvfqp"]
 [ext_resource type="Texture2D" uid="uid://dd6yr1tyqi66d" path="res://¡placeholders/Screenshot 2024-05-16 at 1.55.58 AM.png" id="3_dwkp1"]
+[ext_resource type="Resource" uid="uid://c4mnjgd2u0inw" path="res://Dialogues/Gorama.dialogue" id="3_haom4"]
+[ext_resource type="Resource" uid="uid://dyoy3d07y78oa" path="res://Dialogues/Vanila.dialogue" id="4_g286m"]
 [ext_resource type="Texture2D" uid="uid://chvy1tmlnqbwk" path="res://¡placeholders/Screenshot 2024-05-16 at 1.57.25 AM.png" id="4_w6x5e"]
 [ext_resource type="Texture2D" uid="uid://6mvu0dj36r2n" path="res://¡placeholders/df5f34f14ddc1560e6d75157191d8e8a.png" id="5_qhteh"]
 [ext_resource type="Texture2D" uid="uid://ds7f3n07fhww3" path="res://vax angry.png" id="6_7y7qc"]
+[ext_resource type="Resource" uid="uid://1dqls62uk5yq" path="res://Dialogues/Radio.dialogue" id="6_cfixh"]
 [ext_resource type="Texture2D" uid="uid://dxxkqd7vk10p5" path="res://¡placeholders/prueba.png" id="7_g3rnf"]
-[ext_resource type="Resource" uid="uid://drvhiq110q04p" path="res://Dialogues/test.dialogue" id="7_ruwbg"]
+[ext_resource type="Resource" uid="uid://bb02ugd7647g1" path="res://Dialogues/marriage.dialogue" id="7_kwai2"]
 [ext_resource type="PackedScene" uid="uid://bexopky0lurg0" path="res://Player/player.tscn" id="7_veswy"]
 [ext_resource type="Texture2D" uid="uid://cbwe6xt2gwtjw" path="res://¡placeholders/spacebg/stars.png" id="8_xk447"]
 [ext_resource type="Texture2D" uid="uid://3qdcmp4v8cie" path="res://¡placeholders/spacebg/nebulae.png" id="9_b7yys"]
+[ext_resource type="Resource" uid="uid://b4f0wwqs5ue2a" path="res://Dialogues/Voidra.dialogue" id="9_x7b3r"]
 [ext_resource type="Texture2D" uid="uid://cqv8vs4av3533" path="res://¡placeholders/spacebg/clouds.png" id="10_jq5mf"]
 [ext_resource type="Texture2D" uid="uid://bq0a5ji3g3iiv" path="res://¡placeholders/spacebg/planets.png" id="11_putm1"]
+[ext_resource type="Resource" uid="uid://b4wkej1au1d36" path="res://Dialogues/Vax.dialogue" id="13_o0u6u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3pdq8"]
 
@@ -22,29 +27,33 @@ texture_filter = 1
 [node name="NPCHouse" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(1527, 219)
 npc_texture = ExtResource("2_hvfqp")
+conversation = ExtResource("3_haom4")
 
 [node name="NPCHouse2" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(1260, 922)
 npc_texture = ExtResource("3_dwkp1")
+conversation = ExtResource("4_g286m")
 
 [node name="NPCHouse3" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(2235, 1066)
 npc_texture = ExtResource("4_w6x5e")
+conversation = ExtResource("6_cfixh")
 
 [node name="NPCHouse4" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(379, 841)
 npc_texture = ExtResource("5_qhteh")
+conversation = ExtResource("9_x7b3r")
 
 [node name="NPCHouse5" parent="." instance=ExtResource("1_yv12u")]
 position = Vector2(-146, 125)
 npc_texture = ExtResource("6_7y7qc")
-conversation = ExtResource("7_ruwbg")
+conversation = ExtResource("7_kwai2")
 
 [node name="NPCHouse6" parent="." instance=ExtResource("1_yv12u")]
 material = SubResource("ShaderMaterial_3pdq8")
 position = Vector2(475, 196)
 npc_texture = ExtResource("7_g3rnf")
-conversation = ExtResource("7_ruwbg")
+conversation = ExtResource("13_o0u6u")
 
 [node name="Player" parent="." instance=ExtResource("7_veswy")]
 position = Vector2(0, 0)

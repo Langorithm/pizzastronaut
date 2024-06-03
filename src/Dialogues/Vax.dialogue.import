@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://b4wkej1au1d36"
+path="res://.godot/imported/Vax.dialogue-d6a451ba10ba93dbe5daaebe5b9efe54.tres"
+
+[deps]
+
+source_file="res://Dialogues/Vax.dialogue"
+dest_files=["res://.godot/imported/Vax.dialogue-d6a451ba10ba93dbe5daaebe5b9efe54.tres"]
+
+[params]
+
+defaults=true

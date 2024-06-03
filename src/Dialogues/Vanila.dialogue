@@ -1,0 +1,38 @@
+~ start
+do emote("happy")
+Vanila Shoklat: A pizza? Why thank you, but I didn’t order a pizza! Must’ve been a gift from one of my adoring fans
+do decrease_oxygen(1)
+- Adoring fans? => Choice_2
+- Sounds cool, have a Good Night => END
+
+~ Choice_2
+do emote("")
+Vanila Shoklat: WAIT... don’t you know who I am?
+do decrease_oxygen(2)
+- Are u a singer? => Choice_3_B
+- Should I? => Choice_3
+
+~ Choice_3
+Vanila Shoklat: Gee, how out of touch are you? Are you like that old lady? Talk about someone who speaks so much yet says so little of value! *gives tip* Use this to buy my albums and expose yourself to some TRUE art! I’ll be expecting a full review next time I order - I mean receive - a pizza!
+do decrease_oxygen(2)
+=> END
+~ Choice_3_B
+Vanila Shoklat: And the best one of this solar system sweetie, i've won a Milky Award for my last album. Have you really not heard about it?
+- I Really don't care Mrs, i just deliver pizza => Choice_4_bad
+- Not really, but that sounds cool. I'll look for you on Spotify later => Choice_4
+
+~ Choice_4
+do emote("bad")
+Vanila Shoklat: ... What's Spotify?
+Player: Oh, it's an app we use on earth to upload and hear music, you might wanna try it
+do emote("happy")
+Vanila Shoklat: Oh, well thank you for the data earthling. I'll start using it from now on to reach new audience. Have a good night sweetheart and don't forget to hear my last album
+Player: Surely i'll do
+do increase_oxygen(6)
+do win_over()
+=> END
+~ Choice_4_bad
+do emote("bad")
+Vanila Shoklat: Ughh, you really should get a taste honey => END
+do decrease_oxygen(2)
+=> END

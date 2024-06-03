@@ -20,7 +20,7 @@ Vorkus: Arigato gozaimasu! You’re very kind
 do increase_oxygen(5)
 Zarusha: Thank you, sugar. I do love my big, soft hubby Vorky
 Vorkus: And I love you, Zaru-chan!
-#do win_over()
+do win_over()
 do emote("bad")
 Vorkus: Ura Ura, that’s not very nice of you
 do decrease_oxygen(2)

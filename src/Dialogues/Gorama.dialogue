@@ -1,0 +1,28 @@
+~ start
+do emote("")
+Gorama: Thank you for the pizza, dear! This reminds me of the time I…
+- Hey gal, i'm in a hurry => END
+- *Listen* => Choice_2
+~ Choice_2
+Gorama: Well, it all started when I was a little girl. It was certainly a time to be alive back then! You see, when I was born, I didn’t have all the fancy tools you kiddies have nowadays! We didn’t have all the high tech ships and gadgets! Why, we were just learning how to create inter dimensional travel! But …those are stories for different days. Now, there I was, in the park. Specifically the Andromeda Nebula 180-30-2B. A peaceful and sunny day that was! The sun was only a couple of centuries old! Still just a baby! Anyway there I was. In the park. I was probably about 220 years old. Say, do you offer any kind of senior discount?
+do decrease_oxygen(3)
+- Yes ma'am => Choice_3
+- We do not => Choice_3_bad
+~ Choice_3_bad
+do emote("bad")
+Gorama: That's not very nice of you. Back on my days...
+do decrease_oxygen(1)
+Player: Mrs i'm leaving now
+Gorama: Ohhh kids these days...
+do decrease_oxygen(2)
+=> END
+~ Choice_3
+Gorama: Good! One of the perks of being 10,000! Anyway….wait. Where was I? Oh... I forget! Lets see, a long time ago…Andromeda Nebula 180-30-2B... small sun...
+do decrease_oxygen(2)
+- Day at the park? => Choice_4
+- *Leave* => END
+~ Choice_4
+Gorama: Ah yes! The park! Wait….is this the story I’m thinking of? I’ve been to the park so many times? Maybe it wasn’t in Andromeda Nebula 180-30-2B. Maybe it was in Alpha 42170! Yes! That’s the one. Gosh... I was even younger back then! Anywho, I’m sure I’ll remember next time. I wouldn’t want to keep you too long, dear. Thank you for taking the time to listen to an old woman reminisce!
+do increase_oxygen(4)
+do win_over()
+=> END
