@@ -33,6 +33,6 @@ do win_over()
 => END
 ~ Choice_4_bad
 do emote("bad")
-Vanila Shoklat: Ughh, you really should get a taste honey => END
+Vanila Shoklat: Ughh, you really should get a taste honey
 do decrease_oxygen(2)
 => END
