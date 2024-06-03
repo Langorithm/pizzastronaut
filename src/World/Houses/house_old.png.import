@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn3y2dffkyrg0"
-path="res://.godot/imported/radio_displeased.png-de5633e1784f481de6c86350bce04d77.ctex"
+uid="uid://cykw0xqnyndix"
+path="res://.godot/imported/house_old.png-4891fe2908cfcd0f7b222a3baddba1b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Portraits/radio_displeased.png"
-dest_files=["res://.godot/imported/radio_displeased.png-de5633e1784f481de6c86350bce04d77.ctex"]
+source_file="res://World/Houses/house_old.png"
+dest_files=["res://.godot/imported/house_old.png-4891fe2908cfcd0f7b222a3baddba1b2.ctex"]
 
 [params]
 

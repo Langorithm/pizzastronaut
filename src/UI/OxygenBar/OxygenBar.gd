@@ -19,7 +19,6 @@ func _ready():
 
 func update_value(ammount_changed, new_value):
 	var color = increased_color if ammount_changed > 0 else decreased_color 
-	var percentage = new_value/100
 	
 	var t = create_tween()
 	t.set_parallel(true)

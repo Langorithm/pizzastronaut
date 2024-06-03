@@ -2,28 +2,29 @@
 
 [ext_resource type="Shader" path="res://World/Houses/grayscale.gdshader" id="1_6dju6"]
 [ext_resource type="Script" path="res://World/Houses/npc_house.gd" id="1_7aji6"]
-[ext_resource type="Texture2D" uid="uid://0ckyj7rv54fa" path="res://¡placeholders/Screenshot 2024-05-31 145326.png" id="1_xckqs"]
+[ext_resource type="Texture2D" uid="uid://d2dku5rr77m81" path="res://World/Houses/House_famous_lady.png" id="3_cojo0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4uaew"]
 shader = ExtResource("1_6dju6")
 shader_parameter/active = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhxxt"]
-size = Vector2(37, 43)
+size = Vector2(40, 40)
 
 [node name="NPCHouse" type="Area2D"]
 material = SubResource("ShaderMaterial_4uaew")
 collision_layer = 2
-collision_mask = 0
-monitoring = false
 script = ExtResource("1_7aji6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 use_parent_material = true
-position = Vector2(0, -26)
-scale = Vector2(0.38115, 0.38115)
-texture = ExtResource("1_xckqs")
+position = Vector2(0, 10)
+scale = Vector2(5, 5)
+texture = ExtResource("3_cojo0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_qhxxt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

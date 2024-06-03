@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccquc6wewmvcc"
-path="res://.godot/imported/vax_angry.png-b31a3c9c3736a24cb9984de5867f0fbb.ctex"
+uid="uid://cxjosqjalnd6j"
+path="res://.godot/imported/bg_planets3.png-a06e53d0c2ec977f378f1f673a1e8961.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Portraits/vax_angry.png"
-dest_files=["res://.godot/imported/vax_angry.png-b31a3c9c3736a24cb9984de5867f0fbb.ctex"]
+source_file="res://World/Background/bg_planets3.png"
+dest_files=["res://.godot/imported/bg_planets3.png-a06e53d0c2ec977f378f1f673a1e8961.ctex"]
 
 [params]
 

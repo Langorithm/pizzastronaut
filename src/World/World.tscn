@@ -1,109 +1,313 @@
-[gd_scene load_steps=10 format=3 uid="uid://wwmxgctqq853"]
+[gd_scene load_steps=29 format=3 uid="uid://wwmxgctqq853"]
 
-[ext_resource type="PackedScene" uid="uid://68ydftc85v40" path="res://World/Houses/npc_house.tscn" id="1_yv12u"]
+[ext_resource type="Script" path="res://World/Border.gd" id="1_8eclp"]
+[ext_resource type="Shader" path="res://World/Houses/grayscale.gdshader" id="1_lo54i"]
 [ext_resource type="Resource" uid="uid://bb02ugd7647g1" path="res://Dialogues/marriage.dialogue" id="2_0n6qn"]
-[ext_resource type="Resource" uid="uid://drvhiq110q04p" path="res://Dialogues/test.dialogue" id="7_ruwbg"]
+[ext_resource type="Script" path="res://World/Houses/npc_house.gd" id="2_8cw57"]
+[ext_resource type="Texture2D" uid="uid://63fmw8475ug6" path="res://World/Houses/house_hologram.png" id="2_myru8"]
+[ext_resource type="Texture2D" uid="uid://d2dku5rr77m81" path="res://World/Houses/House_famous_lady.png" id="3_8ynyf"]
+[ext_resource type="Texture2D" uid="uid://cykw0xqnyndix" path="res://World/Houses/house_old.png" id="3_34o37"]
+[ext_resource type="Texture2D" uid="uid://03seowud5h12" path="res://World/Houses/house_couple.png" id="4_qxjh4"]
+[ext_resource type="Texture2D" uid="uid://3kgy2ta6d4ox" path="res://World/Background/bg_dust.png" id="6_awe3c"]
+[ext_resource type="Shader" path="res://World/FadedEdges.gdshader" id="6_dhd4i"]
+[ext_resource type="Texture2D" uid="uid://03kl25elxpso" path="res://World/Background/bg_stars2.png" id="6_gef55"]
+[ext_resource type="Texture2D" uid="uid://bidskbdtj1j3p" path="res://World/Houses/house_vax.png" id="6_k5f4m"]
+[ext_resource type="Resource" uid="uid://b4wkej1au1d36" path="res://Dialogues/Vax.dialogue" id="7_1nrj0"]
+[ext_resource type="Texture2D" uid="uid://blbdp4w3thknu" path="res://World/Background/bg_nebulae.png" id="7_ig140"]
 [ext_resource type="PackedScene" uid="uid://bexopky0lurg0" path="res://Player/player.tscn" id="7_veswy"]
-[ext_resource type="Texture2D" uid="uid://cbwe6xt2gwtjw" path="res://¡placeholders/spacebg/stars.png" id="8_xk447"]
-[ext_resource type="Texture2D" uid="uid://3qdcmp4v8cie" path="res://¡placeholders/spacebg/nebulae.png" id="9_b7yys"]
-[ext_resource type="Texture2D" uid="uid://cqv8vs4av3533" path="res://¡placeholders/spacebg/clouds.png" id="10_jq5mf"]
-[ext_resource type="Texture2D" uid="uid://bq0a5ji3g3iiv" path="res://¡placeholders/spacebg/planets.png" id="11_putm1"]
+[ext_resource type="Texture2D" uid="uid://b1rgo4p5ii3bs" path="res://World/Background/bg_planets0.png" id="9_iys0c"]
+[ext_resource type="Texture2D" uid="uid://dwyeg8rcoh02d" path="res://World/Houses/house_radio.png" id="9_koiw0"]
+[ext_resource type="Texture2D" uid="uid://tctfwguh41bt" path="res://World/Background/bg_planets1.png" id="10_lin7j"]
+[ext_resource type="Resource" uid="uid://1dqls62uk5yq" path="res://Dialogues/Radio.dialogue" id="10_nyjwh"]
+[ext_resource type="Texture2D" uid="uid://bxpic6apykg72" path="res://World/Background/bg_planets2.png" id="11_5ihct"]
+[ext_resource type="Texture2D" uid="uid://cxjosqjalnd6j" path="res://World/Background/bg_planets3.png" id="12_0nltd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_84108"]
+radius = 2329.68
+
+[sub_resource type="Gradient" id="Gradient_safqk"]
+offsets = PackedFloat32Array(0, 0.527972)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0.0901961, 0.168627, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lussu"]
+gradient = SubResource("Gradient_safqk")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uaew"]
+shader = ExtResource("1_lo54i")
+shader_parameter/active = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhxxt"]
+size = Vector2(40, 40)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3pdq8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j04sa"]
+shader = ExtResource("6_dhd4i")
 
 [node name="World" type="Node2D"]
 texture_filter = 1
 
-[node name="NPCHouse" parent="." instance=ExtResource("1_yv12u")]
-position = Vector2(1527, 219)
+[node name="Border" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_8eclp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+visible = false
+shape = SubResource("CircleShape2D_84108")
+debug_color = Color(0.698039, 0.282353, 1, 0.576471)
+
+[node name="Transition_Layer" type="CanvasLayer" parent="Border"]
+layer = 100
+
+[node name="ColorRect" type="ColorRect" parent="Border/Transition_Layer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(45, 46.34)
+texture = SubResource("GradientTexture2D_lussu")
+
+[node name="NPCHouse" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_4uaew")
+position = Vector2(759, -464)
+collision_layer = 2
+script = ExtResource("2_8cw57")
 npc = 2
-conversation = ExtResource("7_ruwbg")
 
-[node name="NPCHouse2" parent="." instance=ExtResource("1_yv12u")]
-position = Vector2(1260, 922)
-npc = 3
-conversation = ExtResource("7_ruwbg")
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse"]
+use_parent_material = true
+position = Vector2(4, -27)
+scale = Vector2(5, 5)
+texture = ExtResource("2_myru8")
 
-[node name="NPCHouse3" parent="." instance=ExtResource("1_yv12u")]
-position = Vector2(2235, 1066)
-conversation = ExtResource("7_ruwbg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse"]
+position = Vector2(-1, -27.5)
+shape = SubResource("RectangleShape2D_qhxxt")
 
-[node name="NPCHouse4" parent="." instance=ExtResource("1_yv12u")]
-position = Vector2(546, 844)
-conversation = ExtResource("7_ruwbg")
+[node name="NPCHouse2" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_4uaew")
+position = Vector2(-137, 531)
+collision_layer = 2
+script = ExtResource("2_8cw57")
+npc = 4
 
-[node name="NPCHouse5" parent="." instance=ExtResource("1_yv12u")]
-position = Vector2(-146, 126)
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse2"]
+use_parent_material = true
+position = Vector2(-9, -14)
+scale = Vector2(5, 5)
+texture = ExtResource("3_34o37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse2"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qhxxt")
+
+[node name="NPCHouse3" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_4uaew")
+position = Vector2(1407, -664)
+collision_layer = 2
+script = ExtResource("2_8cw57")
 conversation = ExtResource("2_0n6qn")
 
-[node name="NPCHouse6" parent="." instance=ExtResource("1_yv12u")]
-material = SubResource("ShaderMaterial_3pdq8")
-position = Vector2(475, 196)
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse3"]
+use_parent_material = true
+position = Vector2(-8, -48)
+scale = Vector2(5, 5)
+texture = ExtResource("4_qxjh4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse3"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qhxxt")
+
+[node name="NPCHouse4" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_4uaew")
+position = Vector2(-860, 342)
+collision_layer = 2
+script = ExtResource("2_8cw57")
+npc = 5
+conversation = ExtResource("7_1nrj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse4"]
+use_parent_material = true
+position = Vector2(26, -58)
+scale = Vector2(5, 5)
+texture = ExtResource("6_k5f4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse4"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qhxxt")
+
+[node name="NPCHouse5" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_4uaew")
+position = Vector2(818, 943)
+collision_layer = 2
+script = ExtResource("2_8cw57")
 npc = 1
-conversation = ExtResource("7_ruwbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse5"]
+use_parent_material = true
+position = Vector2(9, 18)
+scale = Vector2(5, 5)
+texture = ExtResource("3_8ynyf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse5"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qhxxt")
+
+[node name="NPCHouse6" type="Area2D" parent="."]
+material = SubResource("ShaderMaterial_3pdq8")
+position = Vector2(-898, -1074)
+collision_layer = 2
+script = ExtResource("2_8cw57")
+npc = 3
+conversation = ExtResource("10_nyjwh")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCHouse6"]
+use_parent_material = true
+position = Vector2(45, -47)
+scale = Vector2(5, 5)
+texture = ExtResource("9_koiw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCHouse6"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qhxxt")
 
 [node name="Player" parent="." instance=ExtResource("7_veswy")]
-position = Vector2(0, 0)
+position = Vector2(-114, -97)
 max_speed = 750
 speed_levels = 5
-max_oxygen = 30
-round_duration_secs = 1.0
-grace_period_secs = 15.0
 
 [node name="UI_Layer" type="CanvasLayer" parent="." groups=["UI_Layer"]]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="stars2" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-position = Vector2(-279, -374)
-scale = Vector2(1.565, 1.565)
-motion_scale = Vector2(0, 0)
-
-[node name="Stars2" type="Sprite2D" parent="ParallaxBackground/stars2"]
-visible = false
-position = Vector2(-175, -736)
-rotation = 0.342047
-scale = Vector2(1.9122, 1.9122)
-texture = ExtResource("8_xk447")
-centered = false
-
 [node name="stars" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
-position = Vector2(-279, -374)
-scale = Vector2(1.565, 1.565)
-motion_scale = Vector2(0.05, 0.05)
+motion_scale = Vector2(0.04, 0.04)
+motion_mirroring = Vector2(1920, 1080)
 
-[node name="Stars" type="Sprite2D" parent="ParallaxBackground/stars"]
-texture = ExtResource("8_xk447")
-centered = false
+[node name="BgStars" type="Sprite2D" parent="ParallaxBackground/stars"]
+texture = ExtResource("6_gef55")
+
+[node name="BgStars2" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 540)
+texture = ExtResource("6_gef55")
+
+[node name="BgStars3" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 0)
+texture = ExtResource("6_gef55")
+
+[node name="BgStars4" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(0, 540)
+texture = ExtResource("6_gef55")
+
+[node name="dust" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 1080)
+
+[node name="BgDust" type="Sprite2D" parent="ParallaxBackground/dust"]
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust2" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 540)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust3" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 0)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust5" type="Sprite2D" parent="ParallaxBackground/dust"]
+visible = false
+position = Vector2(1080, 540)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust6" type="Sprite2D" parent="ParallaxBackground/dust"]
+visible = false
+position = Vector2(1080, 0)
+texture = ExtResource("6_awe3c")
+
+[node name="BgDust4" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(0, 540)
+texture = ExtResource("6_awe3c")
 
 [node name="nebulae" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
-position = Vector2(-279, -374)
-scale = Vector2(1.565, 1.565)
-motion_scale = Vector2(0.1, 0.1)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 1080)
 
 [node name="Nebulae" type="Sprite2D" parent="ParallaxBackground/nebulae"]
-texture = ExtResource("9_b7yys")
-centered = false
+material = SubResource("ShaderMaterial_j04sa")
+texture = ExtResource("7_ig140")
 
-[node name="clouds" type="ParallaxLayer" parent="ParallaxBackground"]
-texture_filter = 1
-position = Vector2(-279, -374)
-scale = Vector2(1.565, 1.565)
-motion_scale = Vector2(0.2, 0.2)
+[node name="Nebulae3" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(0, 540)
+texture = ExtResource("7_ig140")
 
-[node name="Clouds" type="Sprite2D" parent="ParallaxBackground/clouds"]
-texture = ExtResource("10_jq5mf")
-centered = false
+[node name="Nebulae2" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(540, 0)
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae4" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(540, 540)
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae5" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+visible = false
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(1080, 0)
+texture = ExtResource("7_ig140")
+
+[node name="Nebulae6" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+visible = false
+material = SubResource("ShaderMaterial_j04sa")
+position = Vector2(1080, 540)
+texture = ExtResource("7_ig140")
 
 [node name="planets" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_filter = 1
-position = Vector2(-279, -374)
-scale = Vector2(1.565, 1.565)
 motion_scale = Vector2(0.3, 0.3)
 
-[node name="Planets" type="Sprite2D" parent="ParallaxBackground/planets"]
-texture = ExtResource("11_putm1")
-centered = false
+[node name="BgPlanets0" type="Sprite2D" parent="ParallaxBackground/planets"]
+texture = ExtResource("9_iys0c")
+
+[node name="BgPlanets1" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(-178, 613)
+texture = ExtResource("10_lin7j")
+
+[node name="BgPlanets2" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(1097, -52)
+texture = ExtResource("11_5ihct")
+
+[node name="BgPlanets3" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(939, 592)
+texture = ExtResource("12_0nltd")
+
+[connection signal="body_exited" from="Border" to="Border" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse" to="NPCHouse" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse" to="NPCHouse" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse2" to="NPCHouse2" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse2" to="NPCHouse2" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse3" to="NPCHouse3" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse3" to="NPCHouse3" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse4" to="NPCHouse4" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse4" to="NPCHouse4" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse5" to="NPCHouse5" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse5" to="NPCHouse5" method="_on_body_exited"]
+[connection signal="body_entered" from="NPCHouse6" to="NPCHouse6" method="_on_body_entered"]
+[connection signal="body_exited" from="NPCHouse6" to="NPCHouse6" method="_on_body_exited"]

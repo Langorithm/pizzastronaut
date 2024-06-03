@@ -9,7 +9,7 @@ class_name ConversationScreen
 
 var dialog_resource: DialogueResource
 
-func _unhandled_input(event):
+func _unhandled_input(_event):
 	accept_event()
 
 

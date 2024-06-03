@@ -28,7 +28,6 @@ func _on_options_button_pressed() -> void:
 	options_menu.show()
 
 
-
 func _on_credits_button_pressed() -> void:
 	start_buttons.hide()
 	credits_container.show()

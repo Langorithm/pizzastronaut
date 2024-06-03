@@ -21,7 +21,8 @@ func change_scene(scene: PackedScene) -> void:
 	var tree = get_tree()
 	var t = create_tween()
 	t.set_parallel(false)
-	t.tween_property(_transition_screen , "color", Color.BLACK, 0.75)
+	t.tween_property(_transition_screen , "color", Color.MIDNIGHT_BLUE, 0.75)
 	t.tween_callback(tree.change_scene_to_packed.bind(scene))
-	t.tween_property(_transition_screen , "color", Color.TRANSPARENT.darkened(1), 1.25)\
+	t.tween_property(_transition_screen , "color", Color.TRANSPARENT.darkened(
+		Color.MIDNIGHT_BLUE.v), 1.25)\
 		.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)

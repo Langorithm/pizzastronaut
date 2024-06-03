@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://gjvetfr8ohu1"
+path="res://.godot/imported/Dx_01.ogg-5fdc66de7db61b86b07c13db4aebdc8b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/SFX/Alien Dialogue/Dx_01.ogg"
+dest_files=["res://.godot/imported/Dx_01.ogg-5fdc66de7db61b86b07c13db4aebdc8b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
