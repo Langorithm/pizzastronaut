@@ -21,9 +21,9 @@ func activate() -> ConversationScreen:
 		func():
 			set_collision_layer_value(2, false)
 			(material as ShaderMaterial).set_shader_parameter("active", true)
-			var p: Player = get_overlapping_bodies()[0]
-			if p:
-				p.show_emote()
+			var bodies= get_overlapping_bodies()
+			if bodies:
+				bodies[0].show_emote()
 			monitoring = false
 	)
 	

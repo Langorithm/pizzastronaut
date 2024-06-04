@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://wwmxgctqq853"]
+[gd_scene load_steps=37 format=3 uid="uid://wwmxgctqq853"]
 
 [ext_resource type="Script" path="res://World/Border.gd" id="1_8eclp"]
 [ext_resource type="Shader" path="res://World/Houses/grayscale.gdshader" id="1_lo54i"]
@@ -58,15 +58,38 @@ shader_parameter/active = false
 shader = ExtResource("1_lo54i")
 shader_parameter/active = false
 
+[sub_resource type="Shader" id="Shader_jiqgk"]
+code = "shader_type canvas_item;
+
+uniform bool active = false;
+
+void fragment() {
+	if (active){
+		float r = COLOR.r;
+		float g = COLOR.g;
+		float b = COLOR.b;
+		
+		float l = (r+g+b)/3.;
+		
+		COLOR.r = l;
+		COLOR.g = l;
+		COLOR.b = l;
+	}
+}
+
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7ujww"]
-shader = ExtResource("1_lo54i")
+shader = SubResource("Shader_jiqgk")
 shader_parameter/active = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7k5i1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1084u"]
 shader = ExtResource("1_lo54i")
 shader_parameter/active = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hmbo1"]
+shader = ExtResource("1_lo54i")
+shader_parameter/active = false
 
 [node name="World" type="Node2D"]
 texture_filter = 1
@@ -266,7 +289,7 @@ shape = SubResource("RectangleShape2D_qhxxt")
 metadata/_edit_lock_ = true
 
 [node name="NPCHouse5" type="Area2D" parent="."]
-material = SubResource("ShaderMaterial_7k5i1")
+material = SubResource("ShaderMaterial_1084u")
 position = Vector2(333, -87)
 collision_layer = 2
 script = ExtResource("2_8cw57")
@@ -309,14 +332,13 @@ metadata/_edit_lock_ = true
 position = Vector2(-114, -97)
 max_speed = 750
 speed_levels = 5
-max_oxygen = null
-lowest_max_oxygen = null
-pass_out_penalty = null
-oxygen_depleted_per_round = null
-round_duration_secs = 0.2
-grace_period_secs = null
+round_duration_secs = 1.0
 
 [node name="UI_Layer" type="CanvasLayer" parent="." groups=["UI_Layer"]]
+
+[node name="MusicManager" type="Node" parent="."]
+
+[node name="Safe" type="Node" parent="MusicManager"]
 
 [connection signal="body_exited" from="Border" to="Border" method="_on_body_exited"]
 [connection signal="body_entered" from="NPCHouse" to="NPCHouse" method="_on_body_entered"]
