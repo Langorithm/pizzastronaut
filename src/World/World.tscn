@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://wwmxgctqq853"]
+[gd_scene load_steps=38 format=3 uid="uid://wwmxgctqq853"]
 
 [ext_resource type="Script" path="res://World/Border.gd" id="1_8eclp"]
 [ext_resource type="Shader" path="res://World/Houses/grayscale.gdshader" id="1_lo54i"]
@@ -87,8 +87,29 @@ shader_parameter/active = false
 shader = ExtResource("1_lo54i")
 shader_parameter/active = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmbo1"]
-shader = ExtResource("1_lo54i")
+[sub_resource type="Shader" id="Shader_bt0hs"]
+code = "shader_type canvas_item;
+
+uniform bool active = false;
+
+void fragment() {
+	if (active){
+		float r = COLOR.r;
+		float g = COLOR.g;
+		float b = COLOR.b;
+		
+		float l = (r+g+b)/3.;
+		
+		COLOR.r = l;
+		COLOR.g = l;
+		COLOR.b = l;
+	}
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0clw"]
+shader = SubResource("Shader_bt0hs")
 shader_parameter/active = false
 
 [node name="World" type="Node2D"]
@@ -309,7 +330,7 @@ shape = SubResource("RectangleShape2D_qhxxt")
 metadata/_edit_lock_ = true
 
 [node name="NPCHouse6" type="Area2D" parent="."]
-material = SubResource("ShaderMaterial_hmbo1")
+material = SubResource("ShaderMaterial_l0clw")
 position = Vector2(-898, -1074)
 collision_layer = 2
 script = ExtResource("2_8cw57")

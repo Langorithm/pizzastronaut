@@ -115,6 +115,7 @@ layout_mode = 2
 texture = ExtResource("1_gr85e")
 flip_h = true
 script = ExtResource("3_sg2f4")
+npc = 1
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
@@ -122,6 +123,7 @@ layout_mode = 2
 texture = ExtResource("2_bycqd")
 flip_h = true
 script = ExtResource("3_sg2f4")
+npc = 2
 
 [node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
@@ -129,6 +131,7 @@ layout_mode = 2
 texture = ExtResource("3_jjmx8")
 flip_h = true
 script = ExtResource("3_sg2f4")
+npc = 4
 
 [node name="TextureRect7" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
@@ -140,12 +143,14 @@ use_parent_material = true
 layout_mode = 2
 texture = ExtResource("5_e7ln1")
 script = ExtResource("3_sg2f4")
+npc = 3
 
 [node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
 layout_mode = 2
 texture = ExtResource("6_cfpyq")
 script = ExtResource("3_sg2f4")
+npc = 5
 
 [node name="TextureRect6" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
