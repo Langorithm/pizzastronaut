@@ -72,7 +72,7 @@ func decrease_oxygen(o2):
 		oxygen_level_changed.emit(-oxygen_removed, oxygen)
 	if oxygen == 0:
 		if Globals.active_conversation:
-			await Globals.active_conversation.tree_exited
+			(Globals.active_conversation as ConversationScreen).close()
 		pass_out()
 
 func pass_out():

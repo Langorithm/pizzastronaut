@@ -37,7 +37,7 @@ func change_texture(texture: Texture2D, player: bool):
 	portrait.texture = texture
 
 
-func close(_resource):
+func close(_resource = Resource.new()):
 	animation_player.play("close")
 	await animation_player.animation_finished
 	Globals.active_conversation = null

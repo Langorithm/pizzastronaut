@@ -23,11 +23,14 @@ var active_conversation: ConversationScreen
 
 var won_npcs = {}
 var npc_portraits_textures = {}
+var thresholds = {0.3:PLAYER_O2_CRITICAL,0.5:PLAYER_LOW_O2,0.75:PLAYER_MID_O2}
 #var npc_voices_audio_streams = []
+var max_o2
 
 func _ready():
 	var fetch_p = func():
 		player = get_tree().get_first_node_in_group("Player")
+		max_o2 = (player as Player).max_oxygen
 	fetch_p.call_deferred()
 	player_active_portrait = PLAYER_HIGH_O2
 	
@@ -43,25 +46,36 @@ func _ready():
 #Vax = Type 1
 #Radio(?) = Type 2
 #Zarusha = Type 3
+#
+func get_player_portrait(o2):
+	for key in thresholds.keys():
+		if o2 < key*max_o2:
+			return thresholds[key]
+	return PLAYER_HIGH_O2
 
 func increase_oxygen(o2):
 	if player:
-		player.increase_oxygen(o2)	
+		if player.oxygen == 0:
+			pass
+		player.increase_oxygen(o2)
+		player_active_portrait = get_player_portrait(player.oxygen)
 		SM.play(DIALOGUE_GAIN_O2,SM.CH_SFX)
 		active_conversation.change_texture(PLAYER_GAIN_O2,true)
 		await get_tree().create_timer(0.75).timeout
 		active_conversation.change_texture(player_active_portrait,true)
 func decrease_oxygen(o2):
 	if player:
-		player.decrease_oxygen(o2)
 		SM.play(DIALOGUE_LOSE_O2,SM.CH_SFX)
 		active_conversation.change_texture(PLAYER_LOST_O2,true)
 		await get_tree().create_timer(0.75).timeout
 		if player.oxygen == 0:
-			if player_active_portrait == PLAYER_O2_EMPTY:
 				player.pass_out()
-			else:
+		else:
+			player.decrease_oxygen(o2)
+			if player.oxygen == 0:
 				player_active_portrait = PLAYER_O2_EMPTY
+			else:
+				player_active_portrait = get_player_portrait(player.oxygen)
 		active_conversation.change_texture(player_active_portrait,true)
 
 
