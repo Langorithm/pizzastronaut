@@ -1,15 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://cn1w0ec52y11c"]
+[gd_scene load_steps=22 format=3 uid="uid://deixj4uca6j0i"]
 
-[ext_resource type="FontFile" path="res://UI/Kaph-Regular.ttf" id="1_e6h4e"]
+[ext_resource type="FontFile" uid="uid://5dki6ut0kji2" path="res://UI/Kaph-Regular.ttf" id="1_e6h4e"]
+[ext_resource type="Texture2D" uid="uid://qwcnwq4ar31r" path="res://Portraits/famous_happy.png" id="1_gr85e"]
 [ext_resource type="Texture2D" uid="uid://3kgy2ta6d4ox" path="res://World/Background/bg_dust.png" id="1_s5gxj"]
-[ext_resource type="Texture2D" uid="uid://bfcw58vsymklb" path="res://UI/end_screen/banner2.png" id="2_mjvw7"]
+[ext_resource type="Texture2D" uid="uid://jetvs5a1cl5r" path="res://Portraits/hologram_happy.png" id="2_bycqd"]
+[ext_resource type="Texture2D" uid="uid://bucw4xona4n5y" path="res://Portraits/old_happy.png" id="3_jjmx8"]
 [ext_resource type="Script" path="res://UI/WinoverTexture.gd" id="3_sg2f4"]
-[ext_resource type="Texture2D" uid="uid://bqt7vdyt4pf5q" path="res://UI/end_screen/banner3.png" id="4_vu1e4"]
-[ext_resource type="Texture2D" uid="uid://dh0lvuh5hypjn" path="res://UI/end_screen/banner4.png" id="5_bi5fy"]
-[ext_resource type="Texture2D" uid="uid://dt12hvsjjo6uu" path="res://UI/end_screen/banner5.png" id="6_n6vef"]
-[ext_resource type="Texture2D" uid="uid://bc251w01py3pp" path="res://UI/end_screen/banner6.png" id="7_efec3"]
-[ext_resource type="Texture2D" uid="uid://cyjrp13k8oq2j" path="res://UI/end_screen/banner7.png" id="8_twkq0"]
-[ext_resource type="Texture2D" uid="uid://d3g72vwej6ms5" path="res://UI/end_screen/banner8.png" id="9_twdt5"]
+[ext_resource type="Texture2D" uid="uid://bjmto8nxvcjhr" path="res://Portraits/player_large_high_o2.png" id="4_5o0lf"]
+[ext_resource type="Texture2D" uid="uid://jh0vmrlxyevi" path="res://Portraits/radio_happy.png" id="5_e7ln1"]
+[ext_resource type="Texture2D" uid="uid://gan0gp0dqon4" path="res://Portraits/vax_happy.png" id="6_cfpyq"]
+[ext_resource type="Texture2D" uid="uid://b8k1kdc35tjyp" path="res://Portraits/couple_happy.png" id="7_t66wo"]
 [ext_resource type="Texture2D" uid="uid://03kl25elxpso" path="res://World/Background/bg_stars2.png" id="10_aa4ob"]
 [ext_resource type="Shader" path="res://World/FadedEdges.gdshader" id="12_db16b"]
 [ext_resource type="Texture2D" uid="uid://blbdp4w3thknu" path="res://World/Background/bg_nebulae.png" id="13_vyfoi"]
@@ -99,100 +99,64 @@ theme_override_font_sizes/font_size = 50
 text = "The end"
 horizontal_alignment = 1
 
-[node name="banner2" type="TextureRect" parent="."]
-use_parent_material = true
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_mjvw7")
-stretch_mode = 2
-script = ExtResource("3_sg2f4")
-npc = 4
+alignment = 1
 
-[node name="banner3" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_vu1e4")
-stretch_mode = 2
-script = ExtResource("3_sg2f4")
-npc = 3
-
-[node name="banner4" type="TextureRect" parent="."]
-use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_bi5fy")
-stretch_mode = 2
+layout_mode = 2
+texture = ExtResource("1_gr85e")
+flip_h = true
 script = ExtResource("3_sg2f4")
 npc = 1
 
-[node name="banner5" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_n6vef")
-stretch_mode = 2
+layout_mode = 2
+texture = ExtResource("2_bycqd")
+flip_h = true
 script = ExtResource("3_sg2f4")
 npc = 2
 
-[node name="banner6" type="TextureRect" parent="."]
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_efec3")
-stretch_mode = 2
+layout_mode = 2
+texture = ExtResource("3_jjmx8")
+flip_h = true
 script = ExtResource("3_sg2f4")
+npc = 4
 
-[node name="banner7" type="TextureRect" parent="."]
+[node name="TextureRect7" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_twkq0")
-stretch_mode = 2
+layout_mode = 2
+texture = ExtResource("4_5o0lf")
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+texture = ExtResource("5_e7ln1")
+script = ExtResource("3_sg2f4")
+npc = 3
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
+layout_mode = 2
+texture = ExtResource("6_cfpyq")
 script = ExtResource("3_sg2f4")
 npc = 5
 
-[node name="banner8" type="TextureRect" parent="."]
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer"]
 use_parent_material = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 120.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("9_twdt5")
-stretch_mode = 2
+layout_mode = 2
+texture = ExtResource("7_t66wo")
+script = ExtResource("3_sg2f4")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
