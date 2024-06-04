@@ -8,6 +8,7 @@ Vax: Hey dude, thanks for the pizza.
 do emote("bad")
 Vax: Yeah... totally.
 do decrease_oxygen(1)
+Player: *Have i said anything wrong?*
 - Have a good night => END
 - Please let me know if there’s anything else I can do for you! => Choice_3_B
 ~ Choice_2_C
@@ -20,6 +21,7 @@ do increase_oxygen(2)
 do emote("bad")
 Vax: It’s okay... I’m fine. Bye.
 do decrease_oxygen(3)
+Player: *OMG what a mood*
 => END
 ~ Choice_4
 Vax: No way, bro! Keep those jokes coming at me and I’ll keep ordering more pizzas!

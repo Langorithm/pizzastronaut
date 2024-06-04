@@ -9,6 +9,8 @@ do increase_oxygen(1)
 ~ Choice_1_Bad
 do emote("bad")
 Radio: ... Sorry, it was a joke
+do decrease_oxygen(3)
+Player: *Yeah, a bad one for sure*
 => END
 ~ Choice_2
 Radio:  Krusty Krab Pizza! Is the pizza! For you and me!

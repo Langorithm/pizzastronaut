@@ -2,6 +2,7 @@
 
 Vorkus: Oh, kon’nichiwa! Are you the pizza guy?
 do decrease_oxygen(1)
+Player: *Please... No*
 do emote("")
 - Here you have ma’am, i’ll leave now => END
 - Uhh yeah? => Choice_1
@@ -14,6 +15,7 @@ Player: Well ye- yeah. That’s what i am
 do emote("happy")
 Zarusha: Darlin’, yer sweeter than a pitcher of Texas tea! Why, if I were a younger woman who wasn’t so in love with this ol’lug over here, I’d be all over you like barbecue sauce on a rack o’ ribs!
 do decrease_oxygen(2)
+Player: *Is she trying to hit on me in front of her husband?*
 - Well i’d hate to break up this beautiful couple
 - I can’t take this anymore => Choice_2_bad
 Vorkus: Arigato gozaimasu! You’re very kind
