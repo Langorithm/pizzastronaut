@@ -43,6 +43,6 @@ func close(_resource = Resource.new()):
 	await animation_player.animation_finished
 	Globals.active_conversation = null
 	if Globals.completed_npcs.keys().size() >= 7:
-		SC.change_scene(preload("res://addons/dialogue_manager/components/code_edit.tscn"))
+		SC.change_scene(preload("res://UI/end_screen.tscn"))
 	get_parent().remove_child(self)
 	queue_free()
