@@ -16,6 +16,7 @@ Player: *Yeah, a bad one for sure*
 Radio:  Krusty Krab Pizza! Is the pizza! For you and me!
 - *joins in* => Choice_3
 - Right... i'm gonna go
+=> END
 ~ Choice_3
 do emote("happy")
 Player: Krusty Kra-ya-ya-ya-ya-yab Pizzaaaaa
