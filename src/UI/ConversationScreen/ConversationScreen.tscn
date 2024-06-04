@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://UI/OxygenBar/OxygenBar.gd" id="5_r3hno"]
 [ext_resource type="Texture2D" uid="uid://bjmto8nxvcjhr" path="res://Portraits/player_large_high_o2.png" id="5_w2or4"]
 [ext_resource type="Shader" path="res://UI/ConversationScreen/TransparentGradient.gdshader" id="6_vw2bh"]
-[ext_resource type="Texture2D" uid="uid://ds7f3n07fhww3" path="res://vax angry.png" id="7_ti3ad"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ryeq1"]
 shader = ExtResource("1_l8mv2")
@@ -18,6 +17,9 @@ shader = ExtResource("6_vw2bh")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i2dim"]
 shader = ExtResource("6_vw2bh")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mtn7x"]
+load_path = "res://.godot/imported/vax angry.png-311945744395f3ae364003c74a27b57d.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uhbv"]
 bg_color = Color(0, 0, 0, 0.454902)
@@ -147,7 +149,7 @@ offset_right = 682.0
 offset_bottom = 152.0
 scale = Vector2(3, 3)
 size_flags_horizontal = 3
-texture = ExtResource("7_ti3ad")
+texture = SubResource("CompressedTexture2D_mtn7x")
 stretch_mode = 4
 
 [node name="OxygenBar" type="ProgressBar" parent="."]

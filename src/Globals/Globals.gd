@@ -22,7 +22,7 @@ var player_active_portrait: Texture2D
 var active_conversation: ConversationScreen
 
 var won_npcs = {}
-var completed_npc_qty = 0
+var completed_npcs = {}
 var npc_portraits_textures = {}
 #var npc_voices_audio_streams = []
 var max_o2
@@ -30,7 +30,8 @@ var max_o2
 func _ready():
 	var fetch_p = func():
 		player = get_tree().get_first_node_in_group("Player")
-		max_o2 = (player as Player).max_oxygen
+		if player:
+			max_o2 = (player as Player).max_oxygen
 	fetch_p.call_deferred()
 	player_active_portrait = PLAYER_O2_HIGH
 	

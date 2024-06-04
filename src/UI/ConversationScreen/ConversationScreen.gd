@@ -38,8 +38,11 @@ func change_texture(texture: Texture2D, player: bool):
 
 
 func close(_resource = Resource.new()):
+	Globals.completed_npcs[Globals.active_conversation.npc] = ""
 	animation_player.play("close")
 	await animation_player.animation_finished
 	Globals.active_conversation = null
+	if Globals.completed_npcs.keys().size() >= 7:
+		SC.change_scene(preload("res://addons/dialogue_manager/components/code_edit.tscn"))
 	get_parent().remove_child(self)
 	queue_free()

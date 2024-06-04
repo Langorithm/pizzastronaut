@@ -8,7 +8,6 @@ const CONVERSATION_SCREEN = preload("res://UI/ConversationScreen/ConversationScr
 @onready var sprite_2d:Sprite2D = $Sprite2D
 
 
-
 func activate() -> ConversationScreen:
 	var ui_layer: CanvasLayer = get_tree().get_first_node_in_group("UI_Layer")
 	var conversation_screen: ConversationScreen = CONVERSATION_SCREEN.instantiate()

@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://deixj4uca6j0i"]
+[gd_scene load_steps=22 format=3 uid="uid://deixj4uca6j0i"]
 
+[ext_resource type="FontFile" uid="uid://5dki6ut0kji2" path="res://UI/Kaph-Regular.ttf" id="1_e6h4e"]
 [ext_resource type="Texture2D" uid="uid://qwcnwq4ar31r" path="res://Portraits/famous_happy.png" id="1_gr85e"]
+[ext_resource type="Texture2D" uid="uid://3kgy2ta6d4ox" path="res://World/Background/bg_dust.png" id="1_s5gxj"]
 [ext_resource type="Texture2D" uid="uid://jetvs5a1cl5r" path="res://Portraits/hologram_happy.png" id="2_bycqd"]
 [ext_resource type="Texture2D" uid="uid://bucw4xona4n5y" path="res://Portraits/old_happy.png" id="3_jjmx8"]
 [ext_resource type="Script" path="res://UI/WinoverTexture.gd" id="3_sg2f4"]
@@ -8,6 +10,52 @@
 [ext_resource type="Texture2D" uid="uid://jh0vmrlxyevi" path="res://Portraits/radio_happy.png" id="5_e7ln1"]
 [ext_resource type="Texture2D" uid="uid://gan0gp0dqon4" path="res://Portraits/vax_happy.png" id="6_cfpyq"]
 [ext_resource type="Texture2D" uid="uid://b8k1kdc35tjyp" path="res://Portraits/couple_happy.png" id="7_t66wo"]
+[ext_resource type="Texture2D" uid="uid://03kl25elxpso" path="res://World/Background/bg_stars2.png" id="10_aa4ob"]
+[ext_resource type="Shader" path="res://World/FadedEdges.gdshader" id="12_db16b"]
+[ext_resource type="Texture2D" uid="uid://blbdp4w3thknu" path="res://World/Background/bg_nebulae.png" id="13_vyfoi"]
+[ext_resource type="Texture2D" uid="uid://b1rgo4p5ii3bs" path="res://World/Background/bg_planets0.png" id="14_6i3gr"]
+[ext_resource type="Texture2D" uid="uid://tctfwguh41bt" path="res://World/Background/bg_planets1.png" id="15_hklso"]
+[ext_resource type="Texture2D" uid="uid://bxpic6apykg72" path="res://World/Background/bg_planets2.png" id="16_wnb8o"]
+[ext_resource type="Texture2D" uid="uid://cxjosqjalnd6j" path="res://World/Background/bg_planets3.png" id="17_4fb4p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eb7qs"]
+shader = ExtResource("12_db16b")
+
+[sub_resource type="Animation" id="Animation_cs2dk"]
+resource_name = "The End"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_yb7k2"]
+resource_name = "The End 0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2tq3w"]
+_data = {
+"The End": SubResource("Animation_cs2dk"),
+"The End 0": SubResource("Animation_yb7k2")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,6 +64,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -97.0
+offset_right = 86.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_e6h4e")
+theme_override_font_sizes/font_size = 50
+text = "Thank you for playing!"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -412.5
+offset_top = 82.0
+offset_right = 412.5
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_e6h4e")
+theme_override_font_sizes/font_size = 50
+text = "The end"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -28,34 +110,139 @@ grow_vertical = 2
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-modulate = Color(0.176471, 0.176471, 0.176471, 0.513726)
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("1_gr85e")
 flip_h = true
 script = ExtResource("3_sg2f4")
 
 [node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("2_bycqd")
 flip_h = true
+script = ExtResource("3_sg2f4")
 
 [node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("3_jjmx8")
 flip_h = true
+script = ExtResource("3_sg2f4")
 
 [node name="TextureRect7" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("4_5o0lf")
 
 [node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("5_e7ln1")
+script = ExtResource("3_sg2f4")
 
 [node name="TextureRect5" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("6_cfpyq")
+script = ExtResource("3_sg2f4")
 
 [node name="TextureRect6" type="TextureRect" parent="HBoxContainer"]
+use_parent_material = true
 layout_mode = 2
 texture = ExtResource("7_t66wo")
+script = ExtResource("3_sg2f4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="stars" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.04, 0.04)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="BgStars" type="Sprite2D" parent="ParallaxBackground/stars"]
+texture = ExtResource("10_aa4ob")
+
+[node name="BgStars2" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 540)
+texture = ExtResource("10_aa4ob")
+
+[node name="BgStars3" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(960, 0)
+texture = ExtResource("10_aa4ob")
+
+[node name="BgStars4" type="Sprite2D" parent="ParallaxBackground/stars"]
+position = Vector2(0, 540)
+texture = ExtResource("10_aa4ob")
+
+[node name="dust" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1080, 1080)
+
+[node name="BgDust" type="Sprite2D" parent="ParallaxBackground/dust"]
+texture = ExtResource("1_s5gxj")
+
+[node name="BgDust2" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 540)
+texture = ExtResource("1_s5gxj")
+
+[node name="BgDust3" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(540, 0)
+texture = ExtResource("1_s5gxj")
+
+[node name="BgDust4" type="Sprite2D" parent="ParallaxBackground/dust"]
+position = Vector2(175, 626)
+texture = ExtResource("1_s5gxj")
+
+[node name="nebulae" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1080, 1080)
+
+[node name="Nebulae" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_eb7qs")
+texture = ExtResource("13_vyfoi")
+
+[node name="Nebulae3" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_eb7qs")
+position = Vector2(0, 540)
+texture = ExtResource("13_vyfoi")
+
+[node name="Nebulae2" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_eb7qs")
+position = Vector2(540, 0)
+texture = ExtResource("13_vyfoi")
+
+[node name="Nebulae4" type="Sprite2D" parent="ParallaxBackground/nebulae"]
+material = SubResource("ShaderMaterial_eb7qs")
+position = Vector2(540, 540)
+texture = ExtResource("13_vyfoi")
+
+[node name="planets" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="BgPlanets0" type="Sprite2D" parent="ParallaxBackground/planets"]
+texture = ExtResource("14_6i3gr")
+
+[node name="BgPlanets1" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(-178, 613)
+texture = ExtResource("15_hklso")
+
+[node name="BgPlanets2" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(1097, -52)
+texture = ExtResource("16_wnb8o")
+
+[node name="BgPlanets3" type="Sprite2D" parent="ParallaxBackground/planets"]
+position = Vector2(939, 592)
+texture = ExtResource("17_4fb4p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2tq3w")
+}
+autoplay = "The End 0"
+"next/The End 0" = &"The End"
