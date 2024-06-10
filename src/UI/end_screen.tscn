@@ -1,6 +1,5 @@
 [gd_scene load_steps=22 format=3 uid="uid://cn1w0ec52y11c"]
 
-[ext_resource type="FontFile" path="res://UI/Kaph-Regular.ttf" id="1_e6h4e"]
 [ext_resource type="Texture2D" uid="uid://3kgy2ta6d4ox" path="res://World/Background/bg_dust.png" id="1_s5gxj"]
 [ext_resource type="Texture2D" uid="uid://bfcw58vsymklb" path="res://UI/end_screen/banner2.png" id="2_mjvw7"]
 [ext_resource type="Script" path="res://UI/WinoverTexture.gd" id="3_sg2f4"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bc251w01py3pp" path="res://UI/end_screen/banner6.png" id="7_efec3"]
 [ext_resource type="Texture2D" uid="uid://cyjrp13k8oq2j" path="res://UI/end_screen/banner7.png" id="8_twkq0"]
 [ext_resource type="Texture2D" uid="uid://d3g72vwej6ms5" path="res://UI/end_screen/banner8.png" id="9_twdt5"]
+[ext_resource type="FontFile" uid="uid://5dki6ut0kji2" path="res://UI/end_screen/Kaph-Regular.ttf" id="9_vfvnb"]
 [ext_resource type="Texture2D" uid="uid://03kl25elxpso" path="res://World/Background/bg_stars2.png" id="10_aa4ob"]
 [ext_resource type="Shader" path="res://World/FadedEdges.gdshader" id="12_db16b"]
 [ext_resource type="Texture2D" uid="uid://blbdp4w3thknu" path="res://World/Background/bg_nebulae.png" id="13_vyfoi"]
@@ -57,47 +57,13 @@ _data = {
 "The End 0": SubResource("Animation_yb7k2")
 }
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -86.0
-offset_top = -97.0
-offset_right = 86.0
-offset_bottom = -74.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_e6h4e")
-theme_override_font_sizes/font_size = 50
-text = "Thank you for playing!"
-visible_characters = 0
-visible_ratio = 0.0
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -412.5
-offset_top = 82.0
-offset_right = 412.5
-offset_bottom = 140.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_e6h4e")
-theme_override_font_sizes/font_size = 50
-text = "The end"
-horizontal_alignment = 1
 
 [node name="banner2" type="TextureRect" parent="."]
 use_parent_material = true
@@ -193,6 +159,46 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_twdt5")
 stretch_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -412.0
+offset_top = -76.0
+offset_right = 413.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.827451)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("9_vfvnb")
+theme_override_font_sizes/font_size = 50
+text = "Thank you for playing!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -412.5
+offset_top = 33.0
+offset_right = 412.5
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.827451)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("9_vfvnb")
+theme_override_font_sizes/font_size = 50
+text = "The end"
+horizontal_alignment = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
