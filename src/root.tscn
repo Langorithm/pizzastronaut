@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://oul30onpet8k"]
+[gd_scene load_steps=9 format=3 uid="uid://oul30onpet8k"]
 
 [ext_resource type="Script" path="res://UI/StartMenu/StartMenu.gd" id="1_68qk4"]
 [ext_resource type="AudioStream" uid="uid://cdpk0o585okam" path="res://Sound/Music/Title_Theme.wav" id="2_88gkp"]
-[ext_resource type="PackedScene" uid="uid://bup6rgp4ye4qm" path="res://UI/StartMenu/start_menu_background.tscn" id="2_453w8"]
 [ext_resource type="Script" path="res://UI/StartMenu/StartButtons.gd" id="3_eh1tq"]
 [ext_resource type="PackedScene" uid="uid://bk8cbgpvqckhj" path="res://UI/Credits/credits_menu.tscn" id="3_t2tic"]
 [ext_resource type="Theme" uid="uid://jy7h66xc0dsf" path="res://UI/game_theme.tres" id="5_dphb4"]
@@ -234,9 +233,6 @@ text = "Controls"
 [node name="Control2" type="Control" parent="StartMenu/UI_Layer/Control/StartMenuUI/OptionsMenu"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Background" parent="StartMenu" instance=ExtResource("2_453w8")]
-texture_filter = 1
 
 [connection signal="visibility_changed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons" to="StartMenu" method="_on_start_buttons_visibility_changed"]
 [connection signal="pressed" from="StartMenu/UI_Layer/Control/StartMenuUI/StartButtons/VBoxContainer/StartButton" to="StartMenu" method="_on_start_button_pressed"]

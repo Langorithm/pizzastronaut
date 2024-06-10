@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://deixj4uca6j0i"]
 
-[ext_resource type="FontFile" uid="uid://5dki6ut0kji2" path="res://UI/Kaph-Regular.ttf" id="1_e6h4e"]
+[ext_resource type="FontFile" uid="uid://5dki6ut0kji2" path="res://UI/end_screen/Kaph-Regular.ttf" id="1_e6h4e"]
 [ext_resource type="Texture2D" uid="uid://qwcnwq4ar31r" path="res://Portraits/famous_happy.png" id="1_gr85e"]
 [ext_resource type="Texture2D" uid="uid://3kgy2ta6d4ox" path="res://World/Background/bg_dust.png" id="1_s5gxj"]
 [ext_resource type="Texture2D" uid="uid://jetvs5a1cl5r" path="res://Portraits/hologram_happy.png" id="2_bycqd"]
