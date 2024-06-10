@@ -63,6 +63,7 @@ func _physics_process(_delta):
 func increase_oxygen(o2):
 	var oxygen_added:int = max(o2,0)
 	oxygen += oxygen_added
+	oxygen = min(max_oxygen,oxygen)
 	if oxygen_added:
 		oxygen_level_changed.emit(oxygen_added, oxygen)
 func decrease_oxygen(o2):
