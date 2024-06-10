@@ -1,4 +1,7 @@
 extends ProgressBar
+class_name OxygenBar
+
+signal animation_finished
 
 @export var increased_color: Color = Color.GREEN
 @export var decreased_color: Color = Color.RED
@@ -27,5 +30,5 @@ func update_value(ammount_changed, new_value):
 		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	t.set_parallel(false)
 	t.tween_property(self,"modulate",oxygen_color,0.7).from(color).set_ease(Tween.EASE_IN)
-	
+	t.chain().tween_callback(func(): animation_finished.emit())
 	

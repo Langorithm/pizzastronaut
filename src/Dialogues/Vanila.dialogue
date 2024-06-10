@@ -2,7 +2,7 @@
 do emote("happy")
 Vanila Shoklat: A pizza? Why thank you, but I didn’t order a pizza! Must’ve been a gift from one of my adoring fans
 do decrease_oxygen(1)
-Player: *What is this lady talking about?*
+Player: What is this lady talking about?
 - Adoring fans? => Choice_2
 - Sounds cool, have a Good Night => END
 

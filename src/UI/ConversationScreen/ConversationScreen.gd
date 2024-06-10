@@ -6,6 +6,7 @@ class_name ConversationScreen
 @onready var player_portrait = %PlayerPortrait
 @onready var npc_portrait = %NPCPortrait
 @onready var animation_player = %AnimationPlayer
+@onready var oxygen_bar: ProgressBar = $OxygenBar
 
 var dialog_resource: DialogueResource
 

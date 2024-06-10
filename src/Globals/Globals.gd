@@ -28,11 +28,8 @@ var npc_portraits_textures = {}
 var max_o2
 
 func _ready():
-	var fetch_p = func():
-		player = get_tree().get_first_node_in_group("Player")
-		if player:
-			max_o2 = (player as Player).max_oxygen
-	fetch_p.call_deferred()
+
+	fetch_player.call_deferred()
 	player_active_portrait = PLAYER_O2_HIGH
 	
 	for npc_name in NPCs.keys():
@@ -41,6 +38,10 @@ func _ready():
 		npc_portraits_textures[npc_name+"_bad"] = load("res://Portraits/%s_bad.png" % [npc_name])
 		npc_portraits_textures[npc_name+"_happy"] = load("res://Portraits/%s_happy.png" % [npc_name])
 
+func fetch_player():
+		player = get_tree().get_first_node_in_group("Player")
+		if player and not max_o2:
+			max_o2 = (player as Player).max_oxygen
 
 
 enum Thresholds {EMPTY,CRITICAL,LOW,MID,HIGH}
@@ -66,21 +67,28 @@ func get_oxygen_threshold(o2):
 
 
 func increase_oxygen(o2):
+	fetch_player()
 	if player:
-		#if player.oxygen == 0:
-			#pass
+		active_conversation.change_texture(PLAYER_GAIN_O2,true)
+		var ox : OxygenBar = active_conversation.oxygen_bar
+		ox.animation_finished.connect(
+			func():
+				active_conversation.change_texture(player_active_portrait,true)
+		)
 		player.increase_oxygen(o2)
 		var thr = get_oxygen_threshold(player.oxygen)
 		player_active_portrait = oxygen_portraits[thr]
 		SM.play(DIALOGUE_GAIN_O2,SM.CH_SFX)
-		active_conversation.change_texture(PLAYER_GAIN_O2,true)
-		await get_tree().create_timer(0.75).timeout
-		active_conversation.change_texture(player_active_portrait,true)
 func decrease_oxygen(o2):
+	fetch_player()
 	if player:
 		SM.play(DIALOGUE_LOSE_O2,SM.CH_SFX)
 		active_conversation.change_texture(PLAYER_LOST_O2,true)
-		await get_tree().create_timer(0.75).timeout
+		var ox : OxygenBar = active_conversation.oxygen_bar
+		ox.animation_finished.connect(
+			func():
+				active_conversation.change_texture(player_active_portrait,true)
+		)
 		if player.oxygen == 0:
 				player.pass_out()
 		else:
@@ -89,7 +97,6 @@ func decrease_oxygen(o2):
 				player_active_portrait = PLAYER_O2_EMPTY
 			else:
 				player_active_portrait = oxygen_portraits[get_oxygen_threshold(player.oxygen)]
-		active_conversation.change_texture(player_active_portrait,true)
 
 
 func win_over():
